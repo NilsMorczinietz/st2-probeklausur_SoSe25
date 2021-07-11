@@ -1,4 +1,4 @@
-package thkoeln.archilab.st2.exercises.wiederholungss21.e1;
+package thkoeln.archilab.st2.exercises.payment.domain;
 
 public class CompanyCustomer extends Customer {
 

@@ -1,4 +1,4 @@
-package thkoeln.archilab.st2.exercises.wiederholungss21;
+package thkoeln.archilab.st2.exercises.payment;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
