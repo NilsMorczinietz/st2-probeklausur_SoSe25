@@ -1,24 +1,27 @@
 package thkoeln.archilab.st2.exercises.payment.domain;
 
-public class CompanyCustomer extends Customer {
+/**
+ * Special case - Customer is a compony. No first name then!
+ */
+public class CCustomer extends Customer {
 
-    public CompanyCustomer( String name, String email ) {
+    public CCustomer(String name, String email ) {
         super( null, name, email );
     }
 
     public String getName() {
-        return super.getLastName();
+        return super.getLName();
     }
 
     public void setName( String name ) {
-        super.setLastName( name );
+        super.setLName( name );
     }
 
-    public String getFirstName() {
+    public String getFName() {
         throw new RuntimeException( "Companies don't have first names" );
     }
 
-    public void setFirstName() {
+    public void setFName() {
         throw new RuntimeException( "Companies don't have first names" );
     }
 

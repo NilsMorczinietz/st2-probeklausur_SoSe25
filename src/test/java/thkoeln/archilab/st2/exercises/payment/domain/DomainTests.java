@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DomainTests {
     private Customer ralf, alva, bjoern;
-    private CompanyCustomer besserEssen;
+    private CCustomer besserEssen;
     private Voucher vr, va, vb1, vb2, ve;
     private Invoice ir, ia, ib, ie;
 
@@ -17,7 +17,7 @@ public class DomainTests {
         ralf = new Customer( "Ralf", "Hanstorf", "ralf@hanstorf-familie.de" );
         alva = new Customer( "Alva", "Jensen", "alva.jensen.1827@gmail.com" );
         bjoern = new Customer( "Björn", "Ladesund", "bjoern@ladesund-services.se" );
-        besserEssen = new CompanyCustomer( "Besser Essen GmbH", "info@besser-essen-gmbh.de" );
+        besserEssen = new CCustomer( "Besser Essen GmbH", "info@besser-essen-gmbh.de" );
 
         vr = new Voucher( 23f, "EUR", ralf );
         va = new Voucher( 71f, "DKR", alva );
@@ -33,11 +33,11 @@ public class DomainTests {
 
     @Test
     public void testCreateInvalidCustomer() {
-        assertTrue( bjoern.isValid() );
-        assertTrue( besserEssen.isValid() );
+        assertTrue( bjoern.isOk() );
+        assertTrue( besserEssen.isOk() );
 
         Customer invalidCustomer = new Customer( "X", "Yz", "123456" );
-        assertFalse( invalidCustomer.isValid() );
+        assertFalse( invalidCustomer.isOk() );
     }
 
     @Test
@@ -59,7 +59,7 @@ public class DomainTests {
             Voucher v = new Voucher( 12f, "abc", alva );
         });
         Voucher v = new Voucher( 12f, "DKR", alva );
-        assertEquals( "DKR", v.getCurrency() );
+        assertEquals( "DKR", v.getMoney2() );
     }
 
 
@@ -94,21 +94,21 @@ public class DomainTests {
     @Test
     public void testDecreaseInvoicePartiallyByVoucher() {
         ir.payPerVoucher( vr );
-        assertEquals( 99f - 23f, ir.getAmount() );
-        assertEquals( 0f, vr.getAmount() );
-        assertEquals( ir.getPurpose(), vr.getWithdrawalPurposes().peek() );
-        assertEquals( 23f, vr.getWithdrawalAmounts().peek() );
-        assertEquals( ir.getCurrency(), vr.getWithdrawalCurrencies().peek() );
+        assertEquals( 99f - 23f, ir.getAm() );
+        assertEquals( 0f, vr.getMoney1() );
+        assertEquals( ir.getTr54LZ(), vr.getLastPurposes().peek() );
+        assertEquals( 23f, vr.getLastM1().peek() );
+        assertEquals( ir.getCur(), vr.getLastM2().peek() );
     }
 
     @Test
     public void testPayInvoiceFullyByVoucher() {
         ia.payPerVoucher( va );
-        assertEquals( 0f, ia.getAmount() );
-        assertEquals( 71f - 12f, va.getAmount() );
-        assertEquals( ia.getPurpose(), va.getWithdrawalPurposes().peek() );
-        assertEquals( 12f, va.getWithdrawalAmounts().peek() );
-        assertEquals( ia.getCurrency(), va.getWithdrawalCurrencies().peek() );
+        assertEquals( 0f, ia.getAm() );
+        assertEquals( 71f - 12f, va.getMoney1() );
+        assertEquals( ia.getTr54LZ(), va.getLastPurposes().peek() );
+        assertEquals( 12f, va.getLastM1().peek() );
+        assertEquals( ia.getCur(), va.getLastM2().peek() );
     }
 
     @Test
@@ -125,8 +125,8 @@ public class DomainTests {
     @Test
     public void testUpdatePurpose() {
         ir.updatePurpose( "Some stuff" );
-        assertEquals( "Some stuff (for Ralf Hanstorf)", ir.getPurpose() );
+        assertEquals( "Some stuff (for Ralf Hanstorf)", ir.getTr54LZ() );
         ie.updatePurpose( "Some stuff" );
-        assertEquals( "Some stuff (for Besser Essen GmbH)", ie.getPurpose() );
+        assertEquals( "Some stuff (for Besser Essen GmbH)", ie.getTr54LZ() );
     }
 }
