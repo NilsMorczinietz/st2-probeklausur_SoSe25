@@ -122,4 +122,11 @@ public class DomainTests {
         assertFalse( ie.payPerVoucher( voucher ) );
     }
 
+    @Test
+    public void testUpdatePurpose() {
+        ir.updatePurpose( "Some stuff" );
+        assertEquals( "Some stuff (for Ralf Hanstorf)", ir.getPurpose() );
+        ie.updatePurpose( "Some stuff" );
+        assertEquals( "Some stuff (for Besser Essen GmbH)", ie.getPurpose() );
+    }
 }

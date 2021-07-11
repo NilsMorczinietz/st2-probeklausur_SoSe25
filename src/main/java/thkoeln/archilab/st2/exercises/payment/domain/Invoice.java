@@ -15,6 +15,11 @@ public class Invoice {
     private String currency;
     private Customer customer;
 
+    /**
+     * Pays the invoice in full, or parts of it, from a voucher.
+     * @param voucher
+     * @return false if something goes wrong, else true
+     */
     public boolean payPerVoucher( Voucher voucher ) {
         if ( customer == null ) return false;
         if ( !customer.isValid() ) return false;
@@ -62,6 +67,11 @@ public class Invoice {
         return true;
     }
 
+    /**
+     * Updates the invoice purpose. It is customary to add the customers first and last name to the purpose.
+     * @param newPurpose
+     * @return false if something goes wrong, else true
+     */
     public boolean updatePurpose ( String newPurpose ) {
         if ( newPurpose == null ) return false;
         if ( customer == null ) return false;
@@ -69,9 +79,16 @@ public class Invoice {
         if ( amount == null ) return false;
         if ( amount < 0 ) return false;
         if ( currency == null ) return false;
-        if ( !currency.equals( "Euro") && !currency.equals( "DKR") && !currency.equals( "SEK") ) return false;
+        if ( !currency.equals( "EUR") && !currency.equals( "DKR") && !currency.equals( "SEK") ) return false;
         if ( purpose == null ) return false;
         purpose = newPurpose;
+        if ( customer instanceof CompanyCustomer ) {
+            // CompanyCustomer doesn't have a first name
+            purpose += " (for " + customer.getLastName() + ")";
+        }
+        else {
+            purpose += " (for " + customer.getFirstName() + " " + customer.getLastName() + ")";
+        }
         return true;
     }
 }
