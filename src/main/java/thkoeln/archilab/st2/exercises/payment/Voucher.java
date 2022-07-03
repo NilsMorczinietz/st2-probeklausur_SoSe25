@@ -3,8 +3,9 @@ package thkoeln.archilab.st2.exercises.payment;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
-import java.util.Stack;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Setter
 @Getter
@@ -16,13 +17,13 @@ public class Voucher {
     // voucher is valid for this customer only
     private Customer customer;
     // the last dates when this voucher was used
-    private Stack<Date> lastD = new Stack<>();
+    private List<LocalDate> lastD = new ArrayList<>();
     // the last money amounts that were taken off this voucher
-    private Stack<Float> lastM1 = new Stack<>();
+    private List<Float> lastM1 = new ArrayList<>();
     // the last currencies in which money was taken off this voucher
-    private Stack<String> lastM2 = new Stack<>();
+    private List<String> lastM2 = new ArrayList<>();
     // the last purposes for which money was taken off this voucher
-    private Stack<String> lastPurposes = new Stack<>();
+    private List<String> lastPurposes = new ArrayList<>();
 
     public Voucher( Float amount, String currency, Customer customer ) {
         if ( !customer.isOk() ) throw new RuntimeException();

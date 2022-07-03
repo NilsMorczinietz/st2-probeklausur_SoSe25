@@ -100,9 +100,9 @@ public class AllTests {
         ir.payPerVoucher( vr );
         assertEquals( 99f - 23f, ir.getAm() );
         assertEquals( 0f, vr.getMoney1() );
-        assertEquals( ir.getTr54LZ(), vr.getLastPurposes().peek() );
-        assertEquals( 23f, vr.getLastM1().peek() );
-        assertEquals( ir.getCur(), vr.getLastM2().peek() );
+        assertEquals( ir.getTr54LZ(), vr.getLastPurposes().get( vr.getLastPurposes().size()-1 ) );
+        assertEquals( 23f, vr.getLastM1().get( vr.getLastM1().size()-1 ) );
+        assertEquals( ir.getCur(), vr.getLastM2().get( vr.getLastM2().size()-1 ) );
     }
 
     @Test
@@ -110,9 +110,9 @@ public class AllTests {
         ia.payPerVoucher( va );
         assertEquals( 0f, ia.getAm() );
         assertEquals( 71f - 12f, va.getMoney1() );
-        assertEquals( ia.getTr54LZ(), va.getLastPurposes().peek() );
-        assertEquals( 12f, va.getLastM1().peek() );
-        assertEquals( ia.getCur(), va.getLastM2().peek() );
+        assertEquals( ia.getTr54LZ(), va.getLastPurposes().get( va.getLastPurposes().size()-1 ) );
+        assertEquals( 12f, va.getLastM1().get( va.getLastM1().size()-1 ) );
+        assertEquals( ia.getCur(), va.getLastM2().get( va.getLastM2().size()-1 ) );
     }
 
     @Test

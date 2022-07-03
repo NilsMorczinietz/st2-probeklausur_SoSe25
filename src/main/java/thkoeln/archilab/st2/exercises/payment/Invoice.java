@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Setter
@@ -45,28 +46,28 @@ public class Invoice {
             am -= v.getMoney1();
             Float reduction = v.getMoney1();
             v.setMoney1( 0f );
-            v.getLastM1().push(reduction);
-            v.getLastM2().push(cur);
-            v.getLastPurposes().push(tr54LZ);
-            v.getLastD().push(new Date());
+            v.getLastM1().add( reduction );
+            v.getLastM2().add( cur );
+            v.getLastPurposes().add( tr54LZ );
+            v.getLastD().add( LocalDate.now() );
         }
         else if ( am == v.getMoney1() ) {
             am = 0f;
             Float reduction = v.getMoney1();
             v.setMoney1( 0f );
-            v.getLastM1().push(reduction);
-            v.getLastM2().push(cur);
-            v.getLastPurposes().push(tr54LZ);
-            v.getLastD().push(new Date());
+            v.getLastM1().add( reduction );
+            v.getLastM2().add( cur );
+            v.getLastPurposes().add( tr54LZ );
+            v.getLastD().add( LocalDate.now() );
         }
         else if ( am < v.getMoney1() ) {
             Float reduction = am;
             am = 0f;
             v.setMoney1( v.getMoney1() - reduction );
-            v.getLastM1().push(reduction);
-            v.getLastM2().push(cur);
-            v.getLastPurposes().push(tr54LZ);
-            v.getLastD().push(new Date());
+            v.getLastM1().add( reduction );
+            v.getLastM2().add( cur );
+            v.getLastPurposes().add( tr54LZ );
+            v.getLastD().add( LocalDate.now() );
         }
         return true;
     }
