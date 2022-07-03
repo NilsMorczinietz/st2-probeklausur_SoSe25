@@ -1,4 +1,4 @@
-package thkoeln.archilab.st2.exercises.payment.domain;
+package thkoeln.archilab.st2.exercises.payment;
 
 /**
  * Special case - Customer is a compony. No first name then!

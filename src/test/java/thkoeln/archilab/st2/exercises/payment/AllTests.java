@@ -1,12 +1,16 @@
-package thkoeln.archilab.st2.exercises.payment.domain;
+package thkoeln.archilab.st2.exercises.payment;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import thkoeln.archilab.st2.exercises.payment.CCustomer;
+import thkoeln.archilab.st2.exercises.payment.Customer;
+import thkoeln.archilab.st2.exercises.payment.Invoice;
+import thkoeln.archilab.st2.exercises.payment.Voucher;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class DomainTests {
+public class AllTests {
     private Customer ralf, alva, bjoern;
     private CCustomer besserEssen;
     private Voucher vr, va, vb1, vb2, ve;
