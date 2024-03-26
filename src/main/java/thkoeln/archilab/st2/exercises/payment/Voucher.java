@@ -1,0 +1,43 @@
+package thkoeln.archilab.st2.exercises.payment;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+@Setter
+@Getter
+public class Voucher {
+    // amount of the voucher
+    private Float money1;
+    // currency of the voucher
+    private String money2;
+    // voucher is valid for this customer only
+    private Customer customer;
+    // the last dates when this voucher was used
+    private List<LocalDate> lastD = new ArrayList<>();
+    // the last money amounts that were taken off this voucher
+    private List<Float> lastM1 = new ArrayList<>();
+    // the last currencies in which money was taken off this voucher
+    private List<String> lastM2 = new ArrayList<>();
+    // the last purposes for which money was taken off this voucher
+    private List<String> lastPurposes = new ArrayList<>();
+
+    public Voucher( Float amount, String currency, Customer customer ) {
+        if ( !customer.isOk() ) throw new RuntimeException();
+        if ( amount == null ) throw new RuntimeException();
+        if ( amount < 0 ) throw new RuntimeException();
+        if ( currency == null ) throw new RuntimeException();
+        if ( !currency.equals( "EUR") && !currency.equals( "DKR") && !currency.equals( "SEK") ) throw new RuntimeException();
+        this.money1 = amount;
+        this.money2 = currency;
+        this.customer = customer;
+    }
+
+    public boolean hasBeenCashed() {
+        return ( money1 <= 0f );
+    }
+
+}
