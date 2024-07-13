@@ -1,4 +1,4 @@
-package thkoeln.archilab.st2.exercises.payment;
+package thkoeln.archilab.st2.ax_payment;
 
 import lombok.Getter;
 import lombok.Setter;

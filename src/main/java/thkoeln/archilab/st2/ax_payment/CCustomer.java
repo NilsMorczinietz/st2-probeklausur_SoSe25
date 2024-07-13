@@ -1,7 +1,7 @@
-package thkoeln.archilab.st2.exercises.payment;
+package thkoeln.archilab.st2.ax_payment;
 
 /**
- * Special case - Customer is a compony. No first name then!
+ * Special case - CustomerEntity is a compony. No first name then!
  */
 public class CCustomer extends Customer {
 

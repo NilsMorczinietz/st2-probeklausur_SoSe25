@@ -1,11 +1,10 @@
-package thkoeln.archilab.st2.exercises.payment;
+package thkoeln.archilab.st2.ax_payment;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Setter
 @Getter

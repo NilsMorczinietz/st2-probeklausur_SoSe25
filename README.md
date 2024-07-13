@@ -1,85 +1,46 @@
-# ST2 Recap (Wiederholung des Stoffes in einem einzigen Repo) - Aufgabenstellung
+# ST2 Probeklausur (Typische Klausuraufgaben in einem einzigen Repo)
 
-Dies ist das Repo, an dem man den gesamten ST2-Stoff einmal im Ganzen durchspielen kann. Die entsprechende
-Beschreibung findet man [auf der ArchiLab-Webseite](https://www.archi-lab.io/exercises/st2/st2Recap.html).
+## Hinweise
 
-Dies hier ist das **Aufgaben-Repo**. Clonen Sie das, und beginnen Sie mit den Aufgaben, die unter dem obigen
-Link beschrieben sind. Die Lösungen liegen [in diesem Repo](https://git.archi-lab.io/public-repos/st2-recap/st2-recap-solution).
+Diese Probeklausur ist eine Art "Selbst-Test" für die Klausur in Softwaretechnik 2. Sie enthält 
+Aufgaben, die in dieser Art und in diesem Umfang in der tatsächlichen Klausur vorkommen könnten.
 
-Es ist ein kleines Beispiel (4 Klassen, 200 Zeilen Code insgesamt). Es geht um folgendes:
+Allerdings ist diese Sammlung deutlich länger als eine echte Klausur. Bei einer echten Klausur
+werden einige Aufgabenarten ausgewählt, so dass man insgesamt auf 120 Minuten Netto-Bearbeitungszeit 
+kommt. Diese Klausur hier ist etwa FIXME Minuten lang. Die Anzahl der Punkte an den einzelnen 
+Aufgaben entspricht etwa der Anzahl Minuten, die man für die Bearbeitung brauchen sollte. 
 
-* Wir betrachten das Payment-Modul eines Webshops. Der Shop operiert in Deutschland, NL, Belgien, Österreich, Dänemark und Schweden. Er unterstützt also die Währungen EUR, DKR und SEK.
-* Es gibt Kunden, die Rechnungen (Invoice) bekommen, für bestellte Waren. Kunden haben nur Vor- und Nachname sowie eine Email. Es gibt noch Firmenkunden, die nur einen Namen und eine Email haben.
-* Umtausch auf Kulanz wird durch die Ausgabe von Gutscheinen (Voucher) geregelt. Diese sind personalisiert. Man kann Bestellungen mit solchen Vouchers bezahlen. Man kann die Vouchers auch mehrmals einsetzen, so lange, bis der Geldbetrag darauf verbraucht ist.
+### Bearbeitung
 
-Sie sollen folgendes tun:
+Es ist sinnvoll, diese Probeklausur auch unter Klausurbedingungen zu bearbeiten. Das bedeutet:
+am besten ungestört am Stück. Hilfreich kann ein Timer sein, der die eigene Bearbeitungszeit
+stoppt. Dann weiß man, wo man noch ggfs. etwas besser vorbereitet oder einfach nur "schneller" 
+werden muss.
 
-1. Wenden Sie Clean-Code-Regeln an.
-1. Nutzen Sie die SOLID-Prinzipien, um den Code zu verbessern.
-1. Implementieren Sie Domain Primitives.
-1. Identifizieren Sie Entities, Value Objects und Aggregates.
-1. Implementieren Sie dies mit JPA.
-1. Spezifizieren Sie ein REST-API.
-1. Implementieren Sie das REST-API.
-1. Die nachfolgenden Aufgaben leiten Sie durch den Prozess. Die Reihenfolge ist ein kleines bisschen abgewandelt, damit es einfacher und nachvollziehbarer ist.
+### Disclaimer
 
-
-## E1) Clean Code - Meaningful Names
-
-Sorgen Sie für "Meaningful Names", damit der Code ein bisschen weniger wirr ist.
-
-
-## E2) Domain Primitives
-
-Man kann im Code mindestens drei Domain Primitives finden. Implementieren Sie diese und sorgen Sie für ein entsprechendes Refactoring im Code.
-
-
-## E3) Annotieren Sie die Verletzungen der folgenden Clean-Code-Regeln und SOLID-Prinzipien im Code
-
-### Lösung E3
-
-Machen Sie bitte in den Code, wie er sich jetzt darstellt, einfach mal "Marker" (als Kommentare) der folgenden Form, um Verletzungen von Clean-Code-Regeln und SOLID-Prinzipien anzuzeigen.
-
-``` Java
-//**  CC - no side effects
-//**  CC - keep your methods small
-//**  CC - proper error handling
-//**  SOLID - single-responsibility-principle
-//**  SOLID - open-closed-principle
-//**  SOLID - liskov-substitution-principle
-```
+* Diese Probeklausur versucht, den Stoff der Vorlesung Softwaretechnik 2 abzudecken. Es gibt aber
+  **keine Garantie auf Vollstängkeit**. Es kann sein, dass die echten Klausur Aufgaben enthalten 
+  wird, die in dieser Probeklausur nicht oder in anderer Form und Länge vorkommen. Dies berechtigt nicht
+  zu Einsprüchen gegen die ST2-Klausur. 
+* Referenz für die ST2-Klausur sind die Workshops der Veranstaltung, die Inhalte des Praktikums 
+  und die Veranstaltungsunterlagen inklusive der Videos.
+* Diese Klausur wird im jeweils abschließenden ST2-Workshop des Semesters "probegeschrieben" und
+  dann grob besprochen. In diesem Workshop kann man Fragen dazu klären. Darüber hinaus gibt es
+  keine Musterlösung.
+* In der echten Klausur wird es keine aufeinander aufbauenden Aufgaben geben. Damit hat man zwar
+  einen "Kontextwechsel" für jede neue Aufgabe, aber man kann die Aufgaben völlig unabhängig 
+  voneinander bearbeiten. In dieser Probeklausur wird dies (aus Aufwandsgründen) nicht 
+  konsequent umgesetzt. D.h. es können sich punktuell Kontexte überschneiden oder wiederholen.
+* Diese Probeklausur kann aus Zeitgründen nicht so rigoros getestet werden wie die echte Klausur.
+  Wenn Sie Unklarheiten oder missverständliche Formulierungen finden, melden Sie per Mail oder
+  per Discord bei uns, damit wir das korrigieren können.
 
 
-## E5) Identifizieren Sie Entities, Value Objects und Aggregates
+## Aufgabenstellungen
 
-Erstmal würde das als logisches Datenmodell genügen, in dem E, VO und AR als Annotationen drin sind, und die Aggregates umkringelt sind. Attribute brauchen nicht dargestellt zu werden, VOs sollten als eigene Klassen abgebildet werden.
+Die Aufgabenstellungen zu den einzelnen Aufgaben finden Sie in `src/main/resources` (jeweils in
+eigenen Markdown-Files):
 
-
-## E6) Setzen Sie die Struktur aus E5 entsprechend mit Spring Data JPA persistent um
-
-
-## E7) Spezifizieren Sie REST-Endpoints
-
-
-| Aufgabe                                                              | Verb | Endpoint |
-|----------------------------------------------------------------------|------|----------|
-| Lege Kunde neu an                                                    |      |          |
-| Hole Liste aller Kunden                                              |      |          |
-| Zeige einen Kunden an                                                |      |          |
-| Ändere die Email eines Kunden                                        |      |          |
-| Lege eine Rechnung neu an                                            |      |          |
-| Zeige eine bestimmte Rechnung an                                     |      |          |
-| Suche alle Rechnungen für einen Kunden                               |      |          |
-| Lösche eine Rechnung                                                 |      |          |
-| Lege einen Voucher neu an                                            |      |          |
-| Finde Vouchers, die für einen bestimmten Zweck eingelöst wurden      |      |          |
-| Finde alle Vouchers einer Währung und >0 Geld drauf für einen Kunden |      |          |
-| Bezahle Rechnung mit einem Voucher                                   |      |          |
-
-(Beim letzten Endpoint muss eine Beziehung namens "vouchersForPayment" von Invoice zu Voucher ergänzt werden)
-
-
-## E8) Implementieren Sie obigen Endpoints
-
-
+* [Aufgabe 1: DDD-Konventionen und Aggregates (15 Punkte)](./src/main/resources/a1_ddd_aggregates.md)
 
