@@ -10,12 +10,18 @@ werden einige Aufgabenarten ausgewählt, so dass man insgesamt auf 120 Minuten N
 kommt. Diese Klausur hier ist etwa FIXME Minuten lang. Die Anzahl der Punkte an den einzelnen 
 Aufgaben entspricht etwa der Anzahl Minuten, die man für die Bearbeitung brauchen sollte. 
 
+
 ### Bearbeitung
 
 Es ist sinnvoll, diese Probeklausur auch unter Klausurbedingungen zu bearbeiten. Das bedeutet:
 am besten ungestört am Stück. Hilfreich kann ein Timer sein, der die eigene Bearbeitungszeit
 stoppt. Dann weiß man, wo man noch ggfs. etwas besser vorbereitet oder einfach nur "schneller" 
 werden muss.
+
+Nicht alle Aufgaben sind gleich schwer, und nicht alles beherrschen Sie gleich gut. Schauen
+Sie also am Anfang einmal über alle Aufgaben drüber und bearbeiten sie in der Reihenfolge, die
+Ihnen am besten liegt.
+
 
 ### Disclaimer
 
@@ -28,6 +34,9 @@ werden muss.
 * Diese Klausur wird im jeweils abschließenden ST2-Workshop des Semesters "probegeschrieben" und
   dann grob besprochen. In diesem Workshop kann man Fragen dazu klären. Darüber hinaus gibt es
   keine Musterlösung.
+* Zu einigen der Aufgaben gibt es Tests, zu anderen nicht (das hängt von der Art der Aufgabe ab). 
+  In der Klausur werden wir aber immer den Code bewerten, nicht die Tests (anders als im 
+  Praktikum!). Die Tests sind also nur eine Hilfestellung für Sie während der Bearbeitung.
 * In der echten Klausur wird es keine aufeinander aufbauenden Aufgaben geben. Damit hat man zwar
   einen "Kontextwechsel" für jede neue Aufgabe, aber man kann die Aufgaben völlig unabhängig 
   voneinander bearbeiten. In dieser Probeklausur wird dies (aus Aufwandsgründen) nicht 
@@ -43,4 +52,5 @@ Die Aufgabenstellungen zu den einzelnen Aufgaben finden Sie in `src/main/resourc
 eigenen Markdown-Files):
 
 * [Aufgabe 1: DDD-Konventionen und Aggregates (15 Punkte)](./src/main/resources/a1_ddd_aggregates.md)
+* [Aufgabe 2: Clean Code und SOLID-Prinzipien (25 Punkte)](./src/main/resources/a2_clean_code_and_solid.md)
 

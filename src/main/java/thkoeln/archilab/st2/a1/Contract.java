@@ -13,12 +13,10 @@ import java.util.UUID;
  * provide a service or product, and the customerEntity agrees to pay for it.
  */
 @Entity
-@Getter
-@Setter
+@Getter @Setter
 public class Contract {
-    @Id
+    @Id @Setter(AccessLevel.NONE)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Setter(AccessLevel.PRIVATE)
     private UUID id;
 
     private String title;
