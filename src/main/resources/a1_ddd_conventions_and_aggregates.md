@@ -13,5 +13,7 @@ eingehalten werden.
 2. Refactorn Sie den Code, indem Sie für jedes Aggregate ein Java-Package anlegen. 
 3. Strukturieren Sie den Code so um, dass die Aggregates die DDD-Konventionen einhalten. Benennen Sie
    Klassen, Variablen und Methoden um, wenn das für die Einhaltung der DDD-Konventionen notwendig ist.
-
+4. Sie können auch für unvollständige oder sogar nicht compilierende Lösungen Punkte
+   erhalten. Versuchen Sie also, so weit wie möglich zu kommen. Die volle Punktzahl
+   gibt es aber nur für eine vollständige, compilierende Lösung.
 

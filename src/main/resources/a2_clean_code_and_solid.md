@@ -21,4 +21,7 @@ sich für Rennen.
    zu entfernen, wenn sie unnötig sind. 
 3. Es gibt auch einen Test (`thkoeln.archilab.st2.a2.RaceTest`), der Ihnen hilft, die 
    das Refactoring zu überprüfen. Der Test muss natürlich mit refactored werden.
-
+4. Sie können auch für unvollständige oder sogar nicht compilierende Lösungen Punkte
+   erhalten. Versuchen Sie also, so weit wie möglich zu kommen. Die volle Punktzahl
+   gibt es aber nur für eine vollständige, compilierende Lösung, bei der der Test
+   grün ist.

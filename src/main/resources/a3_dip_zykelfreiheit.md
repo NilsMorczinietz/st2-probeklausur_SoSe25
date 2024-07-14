@@ -28,4 +28,8 @@ Es gibt als Hilfestellung zwei Tests unter `thkoeln.archilab.st2.a3`:
    - Das gegebene Domain-Model darf dabei nicht verändert werden (sprich: die 
      gewünschten Abhängigkeits-Richtungen liegen fest)
 3. Die Tests sind nur Hilfestellung, bewertet wird der Code. 
+4. Sie können auch für unvollständige oder sogar nicht compilierende Lösungen Punkte 
+   erhalten. Versuchen Sie also, so weit wie möglich zu kommen. Die volle Punktzahl 
+   gibt es aber nur für eine vollständige, compilierende Lösung, bei der beide Tests 
+   grün sind.
 
