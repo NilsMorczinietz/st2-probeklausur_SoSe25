@@ -39,8 +39,10 @@ Ihnen am besten liegt.
   Praktikum!). Die Tests sind also nur eine Hilfestellung für Sie während der Bearbeitung.
 * In der echten Klausur wird es keine aufeinander aufbauenden Aufgaben geben. Damit hat man zwar
   einen "Kontextwechsel" für jede neue Aufgabe, aber man kann die Aufgaben völlig unabhängig 
-  voneinander bearbeiten. In dieser Probeklausur wird dies (aus Aufwandsgründen) nicht 
-  konsequent umgesetzt. D.h. es können sich punktuell Kontexte überschneiden oder wiederholen.
+  voneinander bearbeiten. 
+  - In dieser Probeklausur wird dies (aus Aufwandsgründen) nicht konsequent umgesetzt. 
+    D.h. es können sich punktuell Kontexte überschneiden oder wiederholen. Diese Stellen 
+    sind aber gekennzeichnet.
 * Diese Probeklausur kann aus Zeitgründen nicht so rigoros getestet werden wie die echte Klausur.
   Wenn Sie Unklarheiten oder missverständliche Formulierungen finden, melden Sie per Mail oder
   per Discord bei uns, damit wir das korrigieren können.
@@ -54,4 +56,6 @@ eigenen Markdown-Files):
 * [Aufgabe 1: DDD-Konventionen und Aggregates (15 Punkte)](./src/main/resources/a1_ddd_aggregates.md)
 * [Aufgabe 2: Clean Code und SOLID-Prinzipien (25 Punkte)](./src/main/resources/a2_clean_code_and_solid.md)
 * [Aufgabe 3: Zykelfreiheit mit Hilfe des Dependency Inversion Principles (50 Punkte)](./src/main/resources/a3_dip_zykelfreiheit.md)
-
+* [Aufgabe 4: Domain Primitives (25 Punkte)](./src/main/resources/a4_domain_primitives.md)
+* [Aufgabe 5: REST-Spezifikation und Implementierung (15 Punkte)](./src/main/resources/a5_rest_spezifikation.md)
+* [Aufgabe 6: REST-Implementation (15 Punkte)](./src/main/resources/a6_rest_implementation.md)

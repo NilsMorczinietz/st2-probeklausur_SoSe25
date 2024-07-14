@@ -1,4 +1,4 @@
-# Aufgabe 1: Domain Primitives (25 Punkte)
+# Aufgabe 4: Domain Primitives (25 Punkte)
 
 Für die Klasse `thkoeln.st.st2exam.exercise1.domain.MedicalCareCenter` gilt folgende Beschreibung (auf Englisch, um näher
 an Attributen und Klassennamen zu bleiben):
