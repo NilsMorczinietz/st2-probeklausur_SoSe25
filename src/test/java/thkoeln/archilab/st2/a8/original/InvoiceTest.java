@@ -38,10 +38,10 @@ public class InvoiceTest {
             Invoice.Voucher nullCurrency = new Invoice.Voucher( 50f, null, "Bernd" );
         } );
         assertThrows( RuntimeException.class, () -> {
-            Invoice.Voucher nullCustomer = new Invoice.Voucher( 50f, "EUR", "" );
+            Invoice.Voucher emptyCustomer = new Invoice.Voucher( 50f, "EUR", "" );
         } );
         assertThrows( RuntimeException.class, () -> {
-            Invoice.Voucher emptyCustomer = new Invoice.Voucher( 50f, "EUR", null );
+            Invoice.Voucher nullCustomer = new Invoice.Voucher( 50f, "EUR", null );
         } );
     }
 
