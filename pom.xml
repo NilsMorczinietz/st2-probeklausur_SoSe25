@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>thkoeln.archilab.st2.exercises</groupId>
-    <artifactId>ST2-Recap-Assignment</artifactId>
+    <artifactId>ST2-Probeklausur</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ST2-Recap-Assignment</name>
     <description>Demo project for Spring Boot</description>

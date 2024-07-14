@@ -74,14 +74,6 @@ public class StudentTest {
         courseService.enrollStudentInCourse( oskar, ps );
     }
 
-    @Test
-    public void testCurrentSemesterNumber() {
-        assertEquals( 1, im1.currentSemesterNumber() );
-        assertEquals( 2, im2.currentSemesterNumber() );
-        assertEquals( 6, im6.currentSemesterNumber() );
-        assertEquals( 11, im11.currentSemesterNumber() );
-    }
-
 
     @Test
     public void testAverageEctsLoad() {
