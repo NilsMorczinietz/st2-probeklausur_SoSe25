@@ -53,4 +53,5 @@ eigenen Markdown-Files):
 
 * [Aufgabe 1: DDD-Konventionen und Aggregates (15 Punkte)](./src/main/resources/a1_ddd_aggregates.md)
 * [Aufgabe 2: Clean Code und SOLID-Prinzipien (25 Punkte)](./src/main/resources/a2_clean_code_and_solid.md)
+* [Aufgabe 3: Zykelfreiheit mit Hilfe des Dependency Inversion Principles (50 Punkte)](./src/main/resources/a3_dip_zykelfreiheit.md)
 

@@ -1,4 +1,4 @@
-# Aufgabe 1: Clean Code und SOLID-Prinzipien (25 Punkte)
+# Aufgabe 2: Clean Code und SOLID-Prinzipien (25 Punkte)
 
 Der Code in dieser Aufgabenstellung verstößt gegen Clean-Code-Regeln und die SOLID-Prinzipien
 "Single Responsibility Principle" und "Open/Closed Principle". Refactorn Sie den Code so, dass 
