@@ -10,9 +10,8 @@ The software system for which we specify a REST API is responsible for managing 
 doctor. For simplicity reasons, each slot is exactly 1h long, and is defined by its starting time. 
 I.e. the slot from 10:00 - 11:00 has the number 10. Booking a slot is simply done by entering 
 a patient's name in the appointment slot. 
-
-![Domain Model zu Aufgabe 2](./exercise2-DomainModel.jpg)
-
+    
+![Domain Model zu Aufgabe 5](a5_domain_model.png)
 
 ### Glossar (als Hilfe für den obigen Text)
 
@@ -40,8 +39,8 @@ Das  API muss die folgenden Operationen unterstützen:
 
 
 [Die Datei exercise2-REST.yaml](./exercise2-REST.yaml) ist ein leeres Template für Spezifikation 
-des REST-APIs. Spezifizieren Sie in dieser Datei jeweils URI, HTTP Verb, Request / Response Body 
-sowie Return Codes für alle obigen Zugriffsoperationen.
+des REST-APIs. Spezifizieren Sie in dieser Datei jeweils URI, HTTP Verb, sowie Return Codes für 
+alle obigen Zugriffsoperationen.
 
 
 __Hinweise__: 
@@ -51,5 +50,5 @@ __Hinweise__:
 * Beachten Sie, dass es bei `ReturnCodeFailure` mehrere Fehlerursachen und damit auch mehrere Return Codes
   geben kann.
 * Als Return Codes kommen in dieser Aufgabe nur 200 (OK), 201 (Created), 404 (Not Found), 409 (Conflict) 
-  und 422 (Unprocessable Entity) vor.
+  und 422 (Unprocessable Entity) vor. Nicht alle Return Codes kommen in jeder Operation vor.
 

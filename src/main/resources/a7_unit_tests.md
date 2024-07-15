@@ -15,3 +15,5 @@ Sie alle im Code vorhandenen Methoden der Klasse testen (auch Validierung bei de
 
 1. Sie sollten alle Ausführungspfade, die invaliden Inputs und die "Edge Cases" testen.
 2. Strukturieren Sie die Tests in einzelne Testmethoden mit sinnvollem Umfang.
+3. In der Klasse `ImmatriculationNumber` gibt es mindestens einen kleinen Fehler, den
+   Sie mit Ihrem Test aufspüren und korrigieren sollten. 

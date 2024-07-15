@@ -7,7 +7,7 @@ Aufgaben, die in dieser Art und in diesem Umfang in der tatsächlichen Klausur v
 
 Allerdings ist diese Sammlung deutlich länger als eine echte Klausur. Bei einer echten Klausur
 werden einige Aufgabenarten ausgewählt, so dass man insgesamt auf 120 Minuten Netto-Bearbeitungszeit 
-kommt. Diese Klausur hier ist etwa FIXME Minuten lang. Die Anzahl der Punkte an den einzelnen 
+kommt. Diese Probeklausur hier ist etwas über 3h lang. Die Anzahl der Punkte an den einzelnen 
 Aufgaben entspricht etwa der Anzahl Minuten, die man für die Bearbeitung brauchen sollte. 
 
 
@@ -53,11 +53,11 @@ Ihnen am besten liegt.
 Die Aufgabenstellungen zu den einzelnen Aufgaben finden Sie in `src/main/resources` (jeweils in
 eigenen Markdown-Files):
 
-* [Aufgabe 1: DDD-Konventionen und Aggregates (15 Punkte)](./src/main/resources/a1_ddd_aggregates.md)
+* [Aufgabe 1: DDD-Konventionen und Aggregates (15 Punkte)](./src/main/resources/a1_ddd_conventions_and_aggregates.md)
 * [Aufgabe 2: Clean Code und SOLID-Prinzipien (25 Punkte)](./src/main/resources/a2_clean_code_and_solid.md)
 * [Aufgabe 3: Zykelfreiheit mit Hilfe des Dependency Inversion Principles (50 Punkte)](./src/main/resources/a3_dip_zykelfreiheit.md)
 * [Aufgabe 4: Domain Primitives (25 Punkte)](./src/main/resources/a4_domain_primitives.md)
-* [Aufgabe 5: REST-Spezifikation und Implementierung (15 Punkte)](./src/main/resources/a5_rest_spezifikation.md)
+* [Aufgabe 5: REST-Spezifikation (15 Punkte)](./src/main/resources/a5_rest_spezifikation.md)
 * [Aufgabe 6: REST-Implementation (15 Punkte)](./src/main/resources/a6_rest_implementation.md)
 * [Aufgabe 7: Unit Tests (20 Punkte)](./src/main/resources/a7_unit_tests.md)
 * [Aufgabe 8: Refactoring mit ChatGPT (20 Punkte)](./src/main/resources/a8_chatgpt_refactoring.md)

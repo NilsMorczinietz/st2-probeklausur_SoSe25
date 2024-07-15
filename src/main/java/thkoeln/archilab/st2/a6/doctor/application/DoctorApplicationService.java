@@ -24,12 +24,12 @@ public class DoctorApplicationService {
     public Doctor findById( UUID id ) {
         if ( id == null ) throw new DoctorNotFoundException( "Id must not be null." );
         return doctorRepository.findById( id ).orElseThrow(
-                () -> new DoctorNotFoundException( "Lawyer with id " + id + " not found." )
+                () -> new DoctorNotFoundException( "Doctor with id " + id + " not found." )
         );
     }
 
     public void save( Doctor doctor ) {
-        if ( doctor == null ) throw new DoctorCreateException( "Lawyer must not be null." );
+        if ( doctor == null ) throw new DoctorCreateException( "Doctor must not be null." );
         doctorRepository.save( doctor );
     }
 
