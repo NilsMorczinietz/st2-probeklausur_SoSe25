@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.UUID;
 
-public interface DoctorRepository extends CrudRepository<Doctor, UUID> {
+public interface DoctorRepository extends CrudRepository<Doctor, DoctorId> {
 }

@@ -1,23 +1,21 @@
 package thkoeln.archilab.st2.a6.doctor.domain;
 
 
-import jakarta.persistence.*;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.UUID;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class AppointmentSlot {
-    @Id
-    @Setter(AccessLevel.PROTECTED)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @EmbeddedId
+    @Setter(AccessLevel.PRIVATE)    // only for JPA
+    private AppointmentSlotId id;
 
     private String date;
     private Integer hourNumber;
@@ -27,5 +25,6 @@ public class AppointmentSlot {
         this.date = date;
         this.hourNumber = hourNumber;
         this.patientName = "undefined";
+        this.id = new AppointmentSlotId();
     }
 }

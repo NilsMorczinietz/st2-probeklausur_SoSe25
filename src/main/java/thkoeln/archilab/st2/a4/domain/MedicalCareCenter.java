@@ -1,24 +1,25 @@
 package thkoeln.archilab.st2.a4.domain;
 
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import thkoeln.archilab.st2.a4.domainprimitives.MedicalCareCenterException;
 
-import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
 public class MedicalCareCenter {
-    @Id @Setter(AccessLevel.NONE)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @EmbeddedId
+    @Setter(AccessLevel.PRIVATE)    // only for JPA
+    private MedicalCareCenterId id;
 
     private String centerName;
 
@@ -37,6 +38,7 @@ public class MedicalCareCenter {
         this.centerName = centerName;
         this.numberOfDoctors = numberOfDoctors;
         this.numberOfNurses = numberOfNurses;
+        this.id = new MedicalCareCenterId();
     }
 
     public void addCertification( String disease, Integer fromYear, Integer untilYear ) {

@@ -4,6 +4,7 @@ package thkoeln.archilab.st2.a6.doctor.application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import thkoeln.archilab.st2.a6.doctor.domain.Doctor;
+import thkoeln.archilab.st2.a6.doctor.domain.DoctorId;
 import thkoeln.archilab.st2.a6.doctor.domain.DoctorRepository;
 import thkoeln.archilab.st2.a6.doctor.domain.exceptions.DoctorCreateException;
 import thkoeln.archilab.st2.a6.doctor.domain.exceptions.DoctorNotFoundException;
@@ -21,7 +22,7 @@ public class DoctorApplicationService {
         this.doctorRepository = doctorRepository;
     }
 
-    public Doctor findById( UUID id ) {
+    public Doctor findById( DoctorId id ) {
         if ( id == null ) throw new DoctorNotFoundException( "Id must not be null." );
         return doctorRepository.findById( id ).orElseThrow(
                 () -> new DoctorNotFoundException( "Doctor with id " + id + " not found." )
