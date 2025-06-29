@@ -12,7 +12,7 @@ import thkoeln.archilab.st2.a6.doctor.domain.Doctor;
 import thkoeln.archilab.st2.a6.doctor.domain.DoctorRepository;
 
 
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 import java.util.UUID;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;

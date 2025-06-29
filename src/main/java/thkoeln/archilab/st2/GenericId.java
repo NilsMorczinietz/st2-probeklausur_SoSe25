@@ -1,0 +1,30 @@
+/*
+ * Copyright ArchiLab 2025, Cologne University of Applied Sciences, Faculty 10
+ */
+package thkoeln.archilab.st2;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+
+import java.io.Serializable;
+import java.util.UUID;
+
+@MappedSuperclass
+@Getter
+@EqualsAndHashCode(of = "id")
+@ToString(of = "id")
+public abstract class GenericId implements Serializable {
+    @Column(nullable = false, updatable = false)
+    private final UUID id;
+
+    protected GenericId() {
+        this( UUID.randomUUID() );
+    }
+
+    protected GenericId( UUID id ) {
+        this.id = id;
+    }
+}

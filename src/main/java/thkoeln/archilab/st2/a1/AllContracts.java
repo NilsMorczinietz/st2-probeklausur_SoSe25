@@ -30,9 +30,9 @@ public class AllContracts {
     }
 
 
-    public List<Contract> getAllContractsForCustomer( CustomerEntity customerEntity ) {
-        if ( customerEntity == null ) throw new IllegalArgumentException( "Customer must not be null" );
-        return contractRepo.findAllByCustomerEntity( customerEntity );
+    public List<Contract> getAllContractsForCustomerId( CustomerId customerId ) {
+        if ( customerId == null ) throw new IllegalArgumentException( "Customer must not be null" );
+        return contractRepo.findAllByCustomerId( customerId );
     }
 
     // ... we skip the other possible methods

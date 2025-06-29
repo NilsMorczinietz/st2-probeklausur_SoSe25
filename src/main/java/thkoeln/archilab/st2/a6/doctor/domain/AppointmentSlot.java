@@ -1,15 +1,12 @@
 package thkoeln.archilab.st2.a6.doctor.domain;
 
 
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.util.UUID;
 
 @Entity
@@ -23,12 +20,12 @@ public class AppointmentSlot {
     private UUID id;
 
     private String date;
-    private Integer hour;
+    private Integer hourNumber;
     private String patientName;
 
-    public AppointmentSlot( String date, Integer hour ) {
+    public AppointmentSlot( String date, Integer hourNumber ) {
         this.date = date;
-        this.hour = hour;
+        this.hourNumber = hourNumber;
         this.patientName = "undefined";
     }
 }

@@ -6,6 +6,6 @@ import java.util.List;
 import java.util.UUID;
 
 public interface ContractRepo extends CrudRepository<Contract, UUID> {
-    List<Contract> findAllByCustomerEntity( CustomerEntity customerEntity );
+    List<Contract> findAllByCustomerId( CustomerId customerId );
     List<Contract> findAllByTitle( String title );
 }

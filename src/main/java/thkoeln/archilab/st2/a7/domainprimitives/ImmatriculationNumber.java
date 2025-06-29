@@ -3,8 +3,8 @@ package thkoeln.archilab.st2.a7.domainprimitives;
 import lombok.*;
 import thkoeln.archilab.st2.a3.student.domain.Student;
 
-import javax.persistence.Embeddable;
-import javax.persistence.OneToOne;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.OneToOne;
 import java.time.LocalDate;
 
 /**

@@ -2,7 +2,7 @@ package thkoeln.archilab.st2.a3.course.domain;
 
 import lombok.*;
 import thkoeln.archilab.st2.a3.student.domain.Student;
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;

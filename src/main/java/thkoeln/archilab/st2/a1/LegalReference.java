@@ -2,7 +2,7 @@ package thkoeln.archilab.st2.a1;
 
 import lombok.*;
 
-import javax.persistence.Embeddable;
+import jakarta.persistence.Embeddable;
 
 /**
  * A reference to a paragraph in a specific law, for use in a legal clause in one of

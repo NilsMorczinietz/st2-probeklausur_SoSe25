@@ -1,12 +1,11 @@
 package thkoeln.archilab.st2.a1;
 
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * A legal agreement between our company and a customerEntity, where we (as the company) agree to
@@ -15,19 +14,23 @@ import java.util.UUID;
 @Entity
 @Getter @Setter
 public class Contract {
-    @Id @Setter(AccessLevel.NONE)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @EmbeddedId
+    @Setter(AccessLevel.PRIVATE)    // only for JPA
+    private ContractId id;
 
     private String title;
     private String purpose;
     // ... we skip the other properties
 
-    @ManyToOne
-    private CustomerEntity customerEntity;
+    @Embedded
+    private CustomerId customerId;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<LegalClause> legalClauses;
+
+    public Contract() {
+        this.id = new ContractId();
+    }
 
     //  ... we also skip the business logic
 }

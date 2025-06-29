@@ -1,12 +1,14 @@
 package thkoeln.archilab.st2.a1;
 
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * A clause in a contract that specifies specific aspects of the agreement
@@ -16,16 +18,19 @@ import java.util.UUID;
 @Getter
 @Setter
 public class LegalClause {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Setter(AccessLevel.PRIVATE)
-    private UUID id;
+    @EmbeddedId
+    @Setter(AccessLevel.PRIVATE)    // only for JPA
+    private LegalClauseId id;
 
     private String clauseText;
     // ... we skip the other properties
 
     @ElementCollection (fetch = FetchType.EAGER)
     private List<LegalReference> legalReferences;
+
+    public LegalClause() {
+        this.id = new LegalClauseId();
+    }
 
     //  ... we also skip the business logic
 }

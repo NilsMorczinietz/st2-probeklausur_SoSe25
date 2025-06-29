@@ -2,7 +2,7 @@ package thkoeln.archilab.st2.a2.motorclub.domain;
 
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.UUID;
 
 @Entity

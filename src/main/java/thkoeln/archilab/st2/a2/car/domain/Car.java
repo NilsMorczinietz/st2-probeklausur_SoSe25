@@ -3,7 +3,7 @@ package thkoeln.archilab.st2.a2.car.domain;
 import lombok.*;
 import thkoeln.archilab.st2.a2.race.domain.Race;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.*;
 
 /**
