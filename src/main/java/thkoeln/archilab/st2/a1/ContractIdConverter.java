@@ -4,8 +4,8 @@ import jakarta.persistence.Converter;
 import thkoeln.archilab.st2.GenericIdConverter;
 
 @Converter(autoApply = true)
-public class ContractIdConverter extends GenericIdConverter<ContractId> {
+public class ContractIdConverter extends GenericIdConverter<ContractReferenceKeyType> {
     public ContractIdConverter() {
-        super( ContractId::new );
+        super( ContractReferenceKeyType::new );
     }
 }

@@ -1,24 +1,23 @@
 package thkoeln.archilab.st2.a3.student.domain;
 
+import jakarta.persistence.Embedded;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
 import lombok.*;
 import thkoeln.archilab.st2.a3.domainprimitives.ImmatriculationNumber;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import java.util.UUID;
 
 @Entity
 @Getter @Setter
 @NoArgsConstructor( access = AccessLevel.PROTECTED )
 @EqualsAndHashCode( of = {"id"} )
 public class Student {
-    @Id @Setter(AccessLevel.NONE)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @EmbeddedId
+    @Setter(AccessLevel.PRIVATE)    // only for JPA
+    private StudentId id;
 
     private String name;
+
+    @Embedded
     private ImmatriculationNumber immatriculationNumber;
 
 
@@ -27,5 +26,6 @@ public class Student {
             throw new IllegalArgumentException( "Name or immatriculation number invalid" );
         this.name = name;
         this.immatriculationNumber = immatriculationNumber;
+        this.id = new StudentId();
     }
 }

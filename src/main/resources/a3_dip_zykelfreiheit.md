@@ -1,8 +1,10 @@
 # Aufgabe 3: Zykelfreiheit mit Hilfe des Dependency Inversion Principles (50 Punkte)
 
-Der Code in dieser Aufgabenstellung enthält Zykel. Diese sind entweder unnötig, d.h. lassen
-sich durch einfache Refactorings entfernen, oder sie sind in der Fachlichkeit angesiedelt. 
-Im letzteren Fall können Sie das Dependency Inversion Principle anwenden, um die Zykel zu
+Der Code in dieser Aufgabenstellung enthält zwei Zykel. 
+- Einer davon ist ziemlich offensichtlich unnötig und lässt sich leicht entfernen.
+- Der andere ist in der in der Fachlichkeit angesiedelt.
+
+Im zweiten Fall müssen Sie das Dependency Inversion Principle anwenden, um die Zykel zu
 entfernen.
 
 ![a3_domain_model.png](a3_domain_model.png)
@@ -24,11 +26,15 @@ Es gibt als Hilfestellung zwei Tests unter `thkoeln.archilab.st2.a3`:
 
 1. Schauen Sie sich die Klassen in `thkoeln.archilab.st2.a3` und identifizieren Sie die 
    Gründe für die Zykel.
-2. Refactorn Sie den Code, so dass er keine Zykel mehr enthält. 
+2. Welcher der beiden Zykel ist unnötig? Entfernen Sie den zuerst.
+3. Dann überlegen Sie sich für den anderen Zykel, welche Abhängigkeits-Richtung gewünscht ist
+   (Tipp: Schauen Sie auf das Domänenmodell, also das fachliche Datenmodell)
+4. Refactorn Sie den Code, so dass er keine Zykel mehr enthält, indem Sie ein passendes Interface 
+   einführen (und was sonst noch nötig ist).
    - Das gegebene Domain-Model darf dabei nicht verändert werden (sprich: die 
      gewünschten Abhängigkeits-Richtungen liegen fest)
-3. Die Tests sind nur Hilfestellung, bewertet wird der Code. 
-4. Sie können auch für unvollständige oder sogar nicht compilierende Lösungen Punkte 
+5. Die Tests sind nur Hilfestellung, bewertet wird der Code. 
+6. Sie können auch für unvollständige oder sogar nicht compilierende Lösungen Punkte 
    erhalten. Versuchen Sie also, so weit wie möglich zu kommen. Die volle Punktzahl 
    gibt es aber nur für eine vollständige, compilierende Lösung, bei der beide Tests 
    grün sind.

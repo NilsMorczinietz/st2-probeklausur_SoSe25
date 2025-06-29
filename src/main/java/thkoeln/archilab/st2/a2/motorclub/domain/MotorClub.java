@@ -1,19 +1,24 @@
 package thkoeln.archilab.st2.a2.motorclub.domain;
 
-import lombok.*;
-
-import jakarta.persistence.*;
-import java.util.UUID;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Getter @Setter
-@NoArgsConstructor( access = AccessLevel.PROTECTED )
 @EqualsAndHashCode( of = {"id"} )
 public class MotorClub {
-    @Id @Setter(AccessLevel.NONE)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @EmbeddedId
+    @Setter(AccessLevel.PRIVATE)    // only for JPA
+    private MotorClubId id;
 
     // MotorClub name
     private String name;
+
+    public MotorClub() {
+        this.id = new MotorClubId();
+    }
 }

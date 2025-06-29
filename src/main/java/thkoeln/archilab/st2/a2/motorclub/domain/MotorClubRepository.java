@@ -4,5 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.UUID;
 
-public interface MotorClubRepository extends CrudRepository<MotorClub, UUID> {
+public interface MotorClubRepository extends CrudRepository<MotorClub, MotorClubId> {
 }

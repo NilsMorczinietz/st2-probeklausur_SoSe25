@@ -34,9 +34,9 @@ public class MotorClubService {
         if ( car == null ) throw new IllegalArgumentException( "Car must not be null" );
         if ( race == null ) throw new IllegalArgumentException( "Race must not be null" );
 
-        if( car.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( race ) )
+        if( car.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( race.getId() ) )
             throw new IllegalArgumentException( "Car is already registered" );
-        car.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().add( race );
+        car.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().add( race.getId() );
         carRepository.save( car );
     }
 }

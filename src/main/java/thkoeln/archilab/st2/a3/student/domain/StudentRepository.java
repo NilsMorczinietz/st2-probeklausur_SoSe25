@@ -5,7 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 import java.util.UUID;
 
-public interface StudentRepository extends CrudRepository<Student, UUID> {
+public interface StudentRepository extends CrudRepository<Student, StudentId> {
     List<Student> findAll();
-    void deleteByName( String name );
 }

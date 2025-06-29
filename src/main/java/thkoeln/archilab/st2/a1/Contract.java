@@ -16,7 +16,7 @@ import java.util.List;
 public class Contract {
     @EmbeddedId
     @Setter(AccessLevel.PRIVATE)    // only for JPA
-    private ContractId id;
+    private ContractReferenceKeyType id;
 
     private String title;
     private String purpose;
@@ -29,7 +29,7 @@ public class Contract {
     private List<LegalClause> legalClauses;
 
     public Contract() {
-        this.id = new ContractId();
+        this.id = new ContractReferenceKeyType();
     }
 
     //  ... we also skip the business logic

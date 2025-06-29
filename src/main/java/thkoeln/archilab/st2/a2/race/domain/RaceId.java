@@ -1,4 +1,4 @@
-package thkoeln.archilab.st2.a1;
+package thkoeln.archilab.st2.a2.race.domain;
 
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
@@ -11,9 +11,9 @@ import java.util.UUID;
 
 @Embeddable
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AttributeOverride(name = "id", column = @Column(name = "contract_id"))
-public class ContractId extends GenericId {
-    public ContractId( UUID id ) {
+@AttributeOverride(name = "id", column = @Column(name = "race_id"))
+public class RaceId extends GenericId {
+    public RaceId( UUID id ) {
         super( id );
     }
 }

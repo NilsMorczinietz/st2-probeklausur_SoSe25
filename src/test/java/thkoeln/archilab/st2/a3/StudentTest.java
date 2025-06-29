@@ -106,10 +106,10 @@ public class StudentTest {
     @Test
     public void testAverageEctsLoad() {
         // given, when, then
-        assertEquals( 6, studentService.ectsLoadForStudent( angela1 ) );
-        assertEquals( 6, studentService.ectsLoadForStudent( erkan2 ) );
-        assertEquals( 21, studentService.ectsLoadForStudent( miriam6 ) );
-        assertEquals( 36, studentService.ectsLoadForStudent( oskar11 ) );
+        assertEquals( 6, studentService.ectsLoadForStudent( angela1.getId() ) );
+        assertEquals( 6, studentService.ectsLoadForStudent( erkan2.getId() ) );
+        assertEquals( 21, studentService.ectsLoadForStudent( miriam6.getId() ) );
+        assertEquals( 36, studentService.ectsLoadForStudent( oskar11.getId() ) );
         // sum = 69, average = 69 / 4 = 17.25
         assertEquals( 17.25f, studentService.averageEctsLoad(), 0.01f );
     }
@@ -119,8 +119,8 @@ public class StudentTest {
     public void averageSemesterNumber() {
         // ST2: 1 + 2 + 6 + 11 = 20, average = 20 / 4 = 5
         // in the other courses, there is only one student, so the average is the semester number of that student
-        assertEquals( 5f, st2.averageSemesterNumber(), 0.01f );
-        assertEquals( 6f, pp.averageSemesterNumber(), 0.01f );
-        assertEquals( 11f, ps.averageSemesterNumber(), 0.01f );
+        assertEquals( 5f, courseService.averageSemesterNumber( st2 ), 0.01f );
+        assertEquals( 6f, courseService.averageSemesterNumber( pp), 0.01f );
+        assertEquals( 11f, courseService.averageSemesterNumber( ps ), 0.01f );
     }
 }

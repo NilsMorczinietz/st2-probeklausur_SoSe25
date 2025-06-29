@@ -60,12 +60,12 @@ public class RaceTest {
         Car checkMercedes = carService.findById( mercedes.getId() );
 
         // then
-        assertTrue( checkBmw.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( nuerburgring ) );
-        assertFalse( checkBmw.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( hockenheim ) );
-        assertTrue( checkAudi.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( hockenheim ) );
-        assertFalse( checkAudi.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( nuerburgring ) );
-        assertTrue( checkMercedes.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( spa ) );
-        assertTrue( checkMercedes.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( nuerburgring ) );
+        assertTrue( checkBmw.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( nuerburgring.getId() ) );
+        assertFalse( checkBmw.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( hockenheim.getId() ) );
+        assertTrue( checkAudi.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( hockenheim.getId() ) );
+        assertFalse( checkAudi.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( nuerburgring.getId() ) );
+        assertTrue( checkMercedes.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( spa.getId() ) );
+        assertTrue( checkMercedes.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( nuerburgring.getId() ) );
     }
 
     @Test

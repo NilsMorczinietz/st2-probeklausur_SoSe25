@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 import thkoeln.archilab.st2.a3.course.application.CourseService;
 import thkoeln.archilab.st2.a3.course.domain.Course;
 import thkoeln.archilab.st2.a3.student.domain.Student;
+import thkoeln.archilab.st2.a3.student.domain.StudentId;
 import thkoeln.archilab.st2.a3.student.domain.StudentRepository;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class StudentService {
@@ -27,7 +27,7 @@ public class StudentService {
     }
 
 
-    public Student getStudentById( UUID studentId ) {
+    public Student getStudentById( StudentId studentId ) {
         if ( studentId == null ) throw new IllegalArgumentException( "Student ID is null or empty" );
         return studentRepository.findById( studentId ).orElseThrow(
                 () -> new IllegalArgumentException( "Student not found" ) );
@@ -38,14 +38,14 @@ public class StudentService {
         List<Student> students = studentRepository.findAll();
         Float sum = 0f;
         for ( Student student : students )
-            sum += ectsLoadForStudent( student );
+            sum += ectsLoadForStudent( student.getId() );
         return sum / Float.valueOf( students.size() );
     }
 
 
-    public Integer ectsLoadForStudent( Student student ) {
-        if ( student == null ) throw new IllegalArgumentException( "Student is null" );
-        List<Course> courses = courseService.coursesForStudent( student );
+    public Integer ectsLoadForStudent( StudentId studentId ) {
+        if ( studentId == null ) throw new IllegalArgumentException( "StudentId is null" );
+        List<Course> courses = courseService.coursesForStudent( studentId );
         Integer ects = 0;
         for ( Course course : courses )
             ects += course.getEcts();

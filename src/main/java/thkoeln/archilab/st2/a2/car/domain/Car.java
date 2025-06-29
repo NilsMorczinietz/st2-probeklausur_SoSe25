@@ -1,10 +1,12 @@
 package thkoeln.archilab.st2.a2.car.domain;
 
+import jakarta.persistence.*;
 import lombok.*;
 import thkoeln.archilab.st2.a2.race.domain.Race;
+import thkoeln.archilab.st2.a2.race.domain.RaceId;
 
-import jakarta.persistence.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A semiprofessional or professional athlete
@@ -15,9 +17,9 @@ import java.util.*;
 @NoArgsConstructor( access = AccessLevel.PROTECTED )
 @EqualsAndHashCode( of = {"id"} )
 public class Car {
-    @Id @Setter(AccessLevel.NONE)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @EmbeddedId
+    @Setter(AccessLevel.PRIVATE)    // only for JPA
+    private CarId id;
 
     // brand (Marke) and type of the car
     private String b;
@@ -30,9 +32,10 @@ public class Car {
         this.b = b;
         this.t = t;
         this.registrationNumber = registrationNumber;
+        this.id = new CarId();
     }
 
     // the races in which this car has participated or will participate in the future
-    @ManyToMany( fetch = FetchType.EAGER )
-    private final List<Race> theRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture = new ArrayList<>();
+    @ElementCollection( fetch = FetchType.EAGER )
+    private final List<RaceId> theRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture = new ArrayList<>();
 }
