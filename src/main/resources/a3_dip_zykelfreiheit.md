@@ -24,7 +24,7 @@ Es gibt als Hilfestellung zwei Tests unter `thkoeln.archilab.st2.a3`:
 
 1. Schauen Sie sich die Klassen in `thkoeln.archilab.st2.a3` und identifizieren Sie die 
    Gründe für die Zykel.
-2. Refactorn Sie den Code, so dass er keine Zykelmehr enthält. 
+2. Refactorn Sie den Code, so dass er keine Zykel mehr enthält. 
    - Das gegebene Domain-Model darf dabei nicht verändert werden (sprich: die 
      gewünschten Abhängigkeits-Richtungen liegen fest)
 3. Die Tests sind nur Hilfestellung, bewertet wird der Code. 

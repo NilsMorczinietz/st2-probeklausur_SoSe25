@@ -7,4 +7,5 @@ import java.util.UUID;
 
 public interface StudentRepository extends CrudRepository<Student, UUID> {
     List<Student> findAll();
+    void deleteByName( String name );
 }

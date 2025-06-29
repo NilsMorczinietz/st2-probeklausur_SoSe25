@@ -3,7 +3,9 @@
 In dieser Aufgabe sollen Sie ein **REST-API** spezifizieren. 
 
 ## Kurze Beschreibung der Software
-*(Sie müssen das nicht analysieren, nur damit Sie den Code und die Aufgabenstellung besser verstehen)*
+*(Sie müssen das nicht analysieren. Der Text ist nur dazu da, damit Sie den Code und die Aufgabenstellung besser verstehen.
+Der Code hierzu ist für diese Aufgabe noch nicht nötig, hilft aber vielleicht beim Verständnis. Den Code finden Sie in
+Aufgabe 6.)*
 
 Several doctors are working in a hospital. Each doctor has a number of slots for appointments.
 The software system for which we specify a REST API is responsible for managing the free slots of a 

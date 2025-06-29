@@ -6,7 +6,7 @@ Aufgaben, die in dieser Art und in diesem Umfang in der tatsächlichen Klausur v
 Dieses Repo ist mit Labels versehen, um Klausur-Aufgaben früherer Semester anschauen zu können. 
 Das aktuelle Semester ist immer auf dem letzten Commit des `main`-Branches zu finden. (Nach 
 einem `git clone ...`-Kommando hat man automatisch das letzte Commit. Andernfalls kann man auf 
-das letzte Commit durch das Kommando `git checkout main` wechseln. 
+das letzte Commit durch das Kommando `git checkout main` wechseln). 
 
 Folgende Semester können über Git-Tags zugegriffen werden: 
 - SoSe 2024: `git checkout sose2024`
@@ -14,9 +14,9 @@ Folgende Semester können über Git-Tags zugegriffen werden:
 
 ## Hinweise
 
-Diese Sammlung ist deutlich länger als eine echte Klausur. Bei einer echten Klausur
+Diese Sammlung ist länger als eine echte Klausur. Bei einer echten Klausur
 werden einige Aufgabenarten ausgewählt, so dass man insgesamt auf 120 Minuten Netto-Bearbeitungszeit 
-kommt. Diese Probeklausur hier ist etwas über 3h lang. Die Anzahl der Punkte an den einzelnen 
+kommt. Diese Probeklausur hier ist ca. 3h lang. Die Anzahl der Punkte an den einzelnen 
 Aufgaben entspricht etwa der Anzahl Minuten, die man für die Bearbeitung brauchen sollte. 
 
 
@@ -44,7 +44,7 @@ Ihnen am besten liegt.
   dann grob besprochen. In diesem Workshop kann man Fragen dazu klären. Darüber hinaus gibt es
   keine Musterlösung.
 * Zu einigen der Aufgaben gibt es Tests, zu anderen nicht (das hängt von der Art der Aufgabe ab). 
-  In der Klausur werden wir aber immer den Code bewerten, nicht die Tests (anders als im 
+  In der Klausur werden wir immer den Code bewerten, nicht die Tests (anders als im 
   Praktikum!). Die Tests sind also nur eine Hilfestellung für Sie während der Bearbeitung.
 * In der echten Klausur wird es keine aufeinander aufbauenden Aufgaben geben. Damit hat man zwar
   einen "Kontextwechsel" für jede neue Aufgabe, aber man kann die Aufgaben völlig unabhängig 
@@ -64,9 +64,9 @@ eigenen Markdown-Files):
 
 * [Aufgabe 1: DDD-Konventionen und Aggregates (15 Punkte)](./src/main/resources/a1_ddd_conventions_and_aggregates.md)
 * [Aufgabe 2: Clean Code und SOLID-Prinzipien (25 Punkte)](./src/main/resources/a2_clean_code_and_solid.md)
-* [Aufgabe 3: Zykelfreiheit mit Hilfe des Dependency Inversion Principles (50 Punkte)](./src/main/resources/a3_dip_zykelfreiheit.md)
+* [Aufgabe 3: Zykelfreiheit mit Hilfe des Dependency Inversion Principles (40 Punkte)](./src/main/resources/a3_dip_zykelfreiheit.md)
 * [Aufgabe 4: Domain Primitives (25 Punkte)](./src/main/resources/a4_domain_primitives.md)
 * [Aufgabe 5: REST-Spezifikation (15 Punkte)](./src/main/resources/a5_rest_spezifikation.md)
 * [Aufgabe 6: REST-Implementation (15 Punkte)](./src/main/resources/a6_rest_implementation.md)
 * [Aufgabe 7: Unit Tests (20 Punkte)](./src/main/resources/a7_unit_tests.md)
-* [Aufgabe 8: Refactoring mit ChatGPT (20 Punkte)](./src/main/resources/a8_chatgpt_refactoring.md)
+* [Aufgabe 8: Verständnisfragen (15 Punkte)](./src/main/resources/a8_understanding.md)
