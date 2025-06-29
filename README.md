@@ -68,5 +68,5 @@ eigenen Markdown-Files):
 * [Aufgabe 4: Domain Primitives (25 Punkte)](./src/main/resources/a4_domain_primitives.md)
 * [Aufgabe 5: REST-Spezifikation (15 Punkte)](./src/main/resources/a5_rest_spezifikation.md)
 * [Aufgabe 6: REST-Implementation (15 Punkte)](./src/main/resources/a6_rest_implementation.md)
-* [Aufgabe 7: Unit Tests (20 Punkte)](./src/main/resources/a7_unit_tests.md)
+* [Aufgabe 7: Unit Tests (25 Punkte)](./src/main/resources/a7_unit_tests.md)
 * [Aufgabe 8: Verständnisfragen (15 Punkte)](./src/main/resources/a8_understanding.md)
