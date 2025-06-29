@@ -8,10 +8,10 @@
         <version>2.5.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>thkoeln.archilab.st2.exercises</groupId>
+    <groupId>thkoeln.archilab.st2</groupId>
     <artifactId>ST2-Probeklausur</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ST2-Recap-Assignment</name>
+    <name>ST2-Probeklausur</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
@@ -51,6 +51,16 @@
             <artifactId>archunit-junit5</artifactId>
             <version>1.0.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.modelmapper.extensions</groupId>
+            <artifactId>modelmapper-spring</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>2.3.0</version>
         </dependency>
     </dependencies>
 

@@ -1,11 +1,20 @@
 # ST2 Probeklausur (Typische Klausuraufgaben in einem einzigen Repo)
 
-## Hinweise
-
-Diese Probeklausur ist eine Art "Selbst-Test" für die Klausur in Softwaretechnik 2. Sie enthält 
+Diese Probeklausur ist eine Art "Selbst-Test" für die Klausur in Softwaretechnik 2. Sie enthält
 Aufgaben, die in dieser Art und in diesem Umfang in der tatsächlichen Klausur vorkommen könnten.
 
-Allerdings ist diese Sammlung deutlich länger als eine echte Klausur. Bei einer echten Klausur
+Dieses Repo ist mit Labels versehen, um Klausur-Aufgaben früherer Semester anschauen zu können. 
+Das aktuelle Semester ist immer auf dem letzten Commit des `main`-Branches zu finden. (Nach 
+einem `git clone ...`-Kommando hat man automatisch das letzte Commit. Andernfalls kann man auf 
+das letzte Commit durch das Kommando `git checkout main` wechseln. 
+
+Folgende Semester können über Git-Tags zugegriffen werden: 
+- SoSe 2024: `git checkout sose2024`
+
+
+## Hinweise
+
+Diese Sammlung ist deutlich länger als eine echte Klausur. Bei einer echten Klausur
 werden einige Aufgabenarten ausgewählt, so dass man insgesamt auf 120 Minuten Netto-Bearbeitungszeit 
 kommt. Diese Probeklausur hier ist etwas über 3h lang. Die Anzahl der Punkte an den einzelnen 
 Aufgaben entspricht etwa der Anzahl Minuten, die man für die Bearbeitung brauchen sollte. 
@@ -26,7 +35,7 @@ Ihnen am besten liegt.
 ### Disclaimer
 
 * Diese Probeklausur versucht, den Stoff der Vorlesung Softwaretechnik 2 abzudecken. Es gibt aber
-  **keine Garantie auf Vollstängkeit**. Es kann sein, dass die echten Klausur Aufgaben enthalten 
+  **keine Garantie auf Vollständigkeit**. Es kann sein, dass die echten Klausur Aufgaben enthalten 
   wird, die in dieser Probeklausur nicht oder in anderer Form und Länge vorkommen. Dies berechtigt nicht
   zu Einsprüchen gegen die ST2-Klausur. 
 * Referenz für die ST2-Klausur sind die Workshops der Veranstaltung, die Inhalte des Praktikums 
