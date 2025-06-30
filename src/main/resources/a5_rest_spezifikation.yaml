@@ -22,33 +22,33 @@
   - ReturnCodeSuccess: 201
   - ReturnCodeFailure:
       - 404:
-      - 409: Verstoß gegen Geschäftsregel-Doctor ohne Spezifikation
-      - 422: Werte die Spezifikation oder Name wurden nicht übergeben
+      - 409: Verstoß gegen Geschäftsregel-Doctor ohne valide Spezifikation
+      - 422: Werte, wie Spezifikation oder Name, wurden leer oder als falscher Datentyp übergeben
 
 4. `AppointmentSlot` für einen `Doctor` hinzufügen:
   - URI: /doctors/{doctor-id}/appointmentSlots
   - HTTPVerb: POST
   - ReturnCodeSuccess: 201
   - ReturnCodeFailure:
-      - 404: doctor-id existiert nichit
-      - 409: verstoß gegen Geschäftsregel (z.B. übergebener Slot existiert schon)
-      - 422: Werte zum AppointmentSlot fehlen, wie bspw. date oder hour
+      - 404: doctor-id existiert nicht
+      - 409: Verstoß gegen Geschäftsregel
+      - 422: Werte zum AppointmentSlot fehlen, wie z.B. date oder hour. (z.B. übergebener Slot existiert schon, oder hour > 23)
 
 5. Einen bestimmten `AppointmentSlot` eines `Doctors` für einen Patienten buchen:
   - URI: /doctors/{doctor-id}/appointmentSlot
   - HTTPVerb: PATCH
   - ReturnCodeSuccess: 200
   - ReturnCodeFailure:
-      - 404: doctor-id existiert nicht
-      - 409: verstoß gegen geshcäftsregel (bspw. Slot ist schon gebucht (hat schon patientName))
-      - 422: patientName fehlt im Patch
+      - 404: Doctor mit doctor-id existiert nicht
+      - 409: Verstoß gegen Geschäftsregel (z.B. Slot ist schon gebucht (hat schon patientName))
+      - 422: Wenn das DTO leer ist oder der patientName einen leeren String enthält, falscher Typ (patient existiert nicht mit gegebenen Namen)
 
 6. Alle freien `AppointmentSlots` für einen `Doctor` abfragen:
   - URI: /doctors/{doctor-id}/appointmentSlots?patientName=undefined
   - HTTPVerb: GET
   - ReturnCodeSuccess: 200
   - ReturnCodeFailure:
-      - 404: doctor-id existiert nicht
+      - 404: Doctor mit doctor-id existiert nicht
       - 409:
       - 422:
 
@@ -57,6 +57,6 @@
   - HTTPVerb: DELETE
   - ReturnCodeSuccess: 200
   - ReturnCodeFailure:
-      - 404: doctor-id existiert nicht
+      - 404: Doctor mit doctor-id existiert nicht
       - 409:
       - 422:
