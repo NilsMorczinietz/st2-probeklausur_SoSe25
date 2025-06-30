@@ -1,4 +1,4 @@
-# ST2 Probeklausur (Typische Klausuraufgaben in einem einzigen Repo)
+# LÖSUNGEN ST2 Probeklausur (Typische Klausuraufgaben in einem einzigen Repo)
 
 Diese Probeklausur ist eine Art "Selbst-Test" für die Klausur in Softwaretechnik 2. Sie enthält
 Aufgaben, die in dieser Art und in diesem Umfang in der tatsächlichen Klausur vorkommen könnten.
