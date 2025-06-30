@@ -44,7 +44,7 @@ public class CarService {
         raceService.validateRace(race);
         validateCar(car);
 
-        if(car.isAlreadyRegistered(race.getId()))
+        if(car.isRaceAlreadyRegistered(race.getId()))
             throw new IllegalArgumentException( "Car is already registered" );
 
         car.addRace(race.getId());

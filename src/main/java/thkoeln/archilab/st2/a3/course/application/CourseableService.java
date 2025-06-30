@@ -20,9 +20,9 @@ public class CourseableService implements CourseableServiceInterface {
     @Override
     public List<Courseable> coursesForStudent(StudentId studentId) {
         List<Courseable> courseables = new ArrayList<>();
-        for(Course course : courseService.coursesForStudent(studentId)){
+        for (Course course : courseService.coursesForStudent(studentId)) {
             courseables.add((Courseable) course);
         }
-        return  courseables;
+        return courseables;
     }
 }

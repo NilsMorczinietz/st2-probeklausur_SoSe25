@@ -48,7 +48,7 @@ public class Car {
         return printString;
     }
 
-    public boolean isAlreadyRegistered(RaceId raceId){
+    public boolean isRaceAlreadyRegistered(RaceId raceId){
         return this.getRaces().contains(raceId);
     }
 

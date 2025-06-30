@@ -32,9 +32,9 @@ public class ImmatriculationNumber {
      * @param uniqueNumber the unique number of the student
      * @return an immatriculation number with the given components
      */
-    public static ImmatriculationNumber of( Integer year, Integer month, Integer uniqueNumber ) {
-        if ( year < 0 || year > 35 || month < 1 || month > 12 || uniqueNumber < 0 || uniqueNumber > 9999 )
-            throw new IllegalArgumentException( "Invalid immatriculation number components" );
+    public static ImmatriculationNumber of(Integer year, Integer month, Integer uniqueNumber) {
+        if (year < 0 || year > 35 || month < 1 || month > 12 || uniqueNumber < 0 || uniqueNumber > 9999)
+            throw new IllegalArgumentException("Invalid immatriculation number components");
         ImmatriculationNumber immatriculationNumber = new ImmatriculationNumber();
         immatriculationNumber.number = year * 1000000 + month * 10000 + uniqueNumber;
         return immatriculationNumber;
@@ -45,7 +45,7 @@ public class ImmatriculationNumber {
     }
 
     public Integer getMonth() {
-        return ( number / 10000 ) % 100;
+        return (number / 10000) % 100;
     }
 
     public Integer getUniqueNumber() {
@@ -53,7 +53,7 @@ public class ImmatriculationNumber {
     }
 
     public LocalDate enrollmentDate() {
-        return LocalDate.of( getYear() + 2000, getMonth(), 15 ); // 15th of the month as a placeholder
+        return LocalDate.of(getYear() + 2000, getMonth(), 15); // 15th of the month as a placeholder
     }
 
     /**
@@ -64,11 +64,11 @@ public class ImmatriculationNumber {
         LocalDate now = LocalDate.now();
         int currentMonth = now.getMonthValue();
         LocalDate latestSemesterStart;
-        if ( currentMonth < 3 ) latestSemesterStart = LocalDate.of( now.getYear() - 1, 9, 1 );
-        else if ( currentMonth < 9 ) latestSemesterStart = LocalDate.of( now.getYear(), 3, 1 );
-        else latestSemesterStart = LocalDate.of( now.getYear(), 9, 1 );
+        if (currentMonth < 3) latestSemesterStart = LocalDate.of(now.getYear() - 1, 9, 1);
+        else if (currentMonth < 9) latestSemesterStart = LocalDate.of(now.getYear(), 3, 1);
+        else latestSemesterStart = LocalDate.of(now.getYear(), 9, 1);
         LocalDate enrollmentDate = enrollmentDate();
-        long monthsSinceEnrollment = ChronoUnit.MONTHS.between( enrollmentDate, latestSemesterStart );
+        long monthsSinceEnrollment = ChronoUnit.MONTHS.between(enrollmentDate, latestSemesterStart);
         int semesterNumber = (int) monthsSinceEnrollment / 6 + 1; // +1 because semester numbers start at 1
         return semesterNumber;
     }

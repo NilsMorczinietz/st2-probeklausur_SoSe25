@@ -7,9 +7,10 @@ import lombok.*;
 import thkoeln.archilab.st2.a3.domainprimitives.ImmatriculationNumber;
 
 @Entity
-@Getter @Setter
-@NoArgsConstructor( access = AccessLevel.PROTECTED )
-@EqualsAndHashCode( of = {"id"} )
+@Getter
+@Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@EqualsAndHashCode(of = {"id"})
 public class Student {
     @EmbeddedId
     @Setter(AccessLevel.PRIVATE)    // only for JPA
@@ -21,9 +22,9 @@ public class Student {
     private ImmatriculationNumber immatriculationNumber;
 
 
-    public Student( String name, ImmatriculationNumber immatriculationNumber ) {
-        if ( name == null || name.isEmpty() || immatriculationNumber == null )
-            throw new IllegalArgumentException( "Name or immatriculation number invalid" );
+    public Student(String name, ImmatriculationNumber immatriculationNumber) {
+        if (name == null || name.isEmpty() || immatriculationNumber == null)
+            throw new IllegalArgumentException("Name or immatriculation number invalid");
         this.name = name;
         this.immatriculationNumber = immatriculationNumber;
         this.id = new StudentId();
