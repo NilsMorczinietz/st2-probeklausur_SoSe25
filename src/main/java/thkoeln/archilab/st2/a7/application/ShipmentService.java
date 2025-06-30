@@ -30,4 +30,8 @@ public class ShipmentService {
     public void saveShipment(Shipment shipment){
         shipmentRepository.save(shipment);
     }
+
+    public void deleteShipment(Shipment shipment){
+        shipmentRepository.delete(shipment);
+    }
 }

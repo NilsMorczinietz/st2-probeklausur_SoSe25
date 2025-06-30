@@ -54,7 +54,9 @@ public class ShipmentTests {
 
     @AfterEach
     public void shutDown(){
-
+        shipmentService.deleteShipment(shipment1);
+        shipmentService.deleteShipment(shipment2);
+        shipmentService.deleteShipment(shipment3);
     }
 
     @Test
