@@ -47,4 +47,12 @@ public class Car {
                 + " (" + car.getRegistrationNumber() + ")";
         return printString;
     }
+
+    public boolean isAlreadyRegistered(RaceId raceId){
+        return this.getRaces().contains(raceId);
+    }
+
+    public void addRace(RaceId raceId){
+        races.add(raceId);
+    }
 }

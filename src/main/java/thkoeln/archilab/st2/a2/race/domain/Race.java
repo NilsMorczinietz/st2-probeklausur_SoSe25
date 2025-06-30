@@ -26,5 +26,4 @@ public class Race {
         this.raceDay = raceDay;
         this.id = new RaceId();
     }
-
 }
