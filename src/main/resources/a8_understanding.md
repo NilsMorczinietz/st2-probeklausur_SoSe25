@@ -26,7 +26,7 @@ public class Product {
 ```
 
 ### Ihre Antwort: 
-- price sollte ein Domainprimitve sein, da er aus Wert und Einheit besteht.
+- setter methode für alles → id sollte man nicht verändern → führt zu überschreibung
 
 
 ---
@@ -45,10 +45,8 @@ Welche(s) SOLID-Prinzip(ien) werden hier verletzt und aus welchem Grund?
 Single Responsibility Principle:
 - , da ein Service immer nur für eine Komponente des Sytems verwendet werden sollte. Es sollte demnach keinen großen Service  geben, der alle Implementiert oder auf alles verweist.- Dependency Inversion Principle:
 
-DIP:
-- Die Komponenten können nicht unabhängig voneinander agieren, was schlecht für die Wartbarkeit und Austauschbarkeit ist
-
 Interface Segregation Principle:
+- Das interface soll schön klein sein.
 -  Da es wie in der Aufgabenstellug gesagt ein grißen interface gibt an statt viele kleine. folgen siege DIP
 
 
@@ -68,6 +66,6 @@ Was bedeuten die beiden generischen Typen `<Customer, UUID>` in dieser Repositor
 ### Ihre Antwort:
 
 Cusomter → dass es ein Repo über das Aggregate/Entity Custoemr ist
-Der Typ der PKs von Customer ist eine UUID
+Der Typ der PKs von Customer ist eine UUID (id Typ)
 
 

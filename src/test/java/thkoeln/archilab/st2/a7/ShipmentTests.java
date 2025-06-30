@@ -25,7 +25,6 @@ public class ShipmentTests {
     private Shipment shipment1, shipment2, shipment3;
     private float container1Price, container2Price, shipment1Price, shipment2Price, shipment3Price, mustermannPrice, musterfrauPrice;
 
-
     @BeforeEach
     public void setUp(){
         container1 = new Container(10F, 10F ,10F);
@@ -95,4 +94,7 @@ public class ShipmentTests {
         assertEquals(mustermannPrice, calculatedMustermannPrice);
         assertEquals(musterfrauPrice, calculatedMusterfrauPrice);
     }
+
+    // Edge Case: Kunde ohne Lieferung
+    // Validierung von Container größen
 }

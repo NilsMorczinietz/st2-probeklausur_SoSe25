@@ -17,9 +17,7 @@ public class ShipmentService {
     }
 
     public Float calculateTotalShipmentPriceOfCustomer(String customerName){
-        System.out.println(customerName);
         List<Shipment> shipments = shipmentRepository.findShipmentsByCustomerNameEquals(customerName);
-        System.out.println(shipments);
 
         float costs = 0;
         for(Shipment shipment : shipments){
