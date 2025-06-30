@@ -36,10 +36,6 @@ public class CarService {
         if ( car == null ) throw new IllegalArgumentException( "Car must not be null" );
     }
 
-    public void saveCar( Car car){
-        carRepository.save(car);
-    }
-
     public void registerCarForRace(Car car, Race race ) {
         raceService.validateRace(race);
         validateCar(car);

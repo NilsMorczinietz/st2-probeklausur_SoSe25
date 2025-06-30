@@ -35,7 +35,6 @@ public class DoctorRESTController {
         // ─── 1. Konvertiere und validiere Parameter ───────────────────────────────
         DoctorId doctorId;
         try {
-            System.out.println("ID: " + idStr);
             doctorId = new DoctorId(UUID.fromString(idStr));
         } catch (RuntimeException ex) {
             throw new DoctorCreateException("Invalid UUID format." + ex.getMessage());
