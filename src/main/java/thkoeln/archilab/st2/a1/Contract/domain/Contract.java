@@ -1,9 +1,12 @@
-package thkoeln.archilab.st2.a1;
+package thkoeln.archilab.st2.a1.Contract.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import thkoeln.archilab.st2.a1.domainprimitives.ContractReferenceKeyType;
+import thkoeln.archilab.st2.a1.Customer.domain.CustomerId;
+import thkoeln.archilab.st2.a1.LegalClause.domain.LegalClause;
 
 import java.util.List;
 
@@ -12,7 +15,8 @@ import java.util.List;
  * provide a service or product, and the customerEntity agrees to pay for it.
  */
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 public class Contract {
     @EmbeddedId
     @Setter(AccessLevel.PRIVATE)    // only for JPA
@@ -28,9 +32,9 @@ public class Contract {
     @OneToMany(cascade = CascadeType.ALL)
     private List<LegalClause> legalClauses;
 
-    public Contract() {
-        this.id = new ContractReferenceKeyType();
-    }
+//    public Contract() {
+//        this.id = new ContractReferenceKeyType();
+//    }
 
     //  ... we also skip the business logic
 }

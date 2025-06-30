@@ -16,13 +16,13 @@ public class Race {
     private RaceId id;
 
     // the name of the track for that race
-    private String tname;
+    private String trackName;
 
     // the date
     private LocalDate raceDay;
 
-    public Race( String tname, LocalDate raceDay ) {
-        this.tname = tname;
+    public Race(String trackName, LocalDate raceDay ) {
+        this.trackName = trackName;
         this.raceDay = raceDay;
         this.id = new RaceId();
     }

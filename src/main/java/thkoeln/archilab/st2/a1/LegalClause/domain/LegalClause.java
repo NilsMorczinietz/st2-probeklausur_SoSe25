@@ -1,4 +1,4 @@
-package thkoeln.archilab.st2.a1;
+package thkoeln.archilab.st2.a1.LegalClause.domain;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.EmbeddedId;
@@ -7,6 +7,7 @@ import jakarta.persistence.FetchType;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import thkoeln.archilab.st2.a1.domainprimitives.LegalReference;
 
 import java.util.List;
 

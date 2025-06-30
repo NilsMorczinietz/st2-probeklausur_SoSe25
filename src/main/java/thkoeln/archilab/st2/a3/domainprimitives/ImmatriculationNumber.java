@@ -1,10 +1,8 @@
 package thkoeln.archilab.st2.a3.domainprimitives;
 
-import lombok.*;
-import thkoeln.archilab.st2.a3.student.domain.Student;
-
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.OneToOne;
+import lombok.*;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -25,10 +23,6 @@ import java.time.temporal.ChronoUnit;
 public class ImmatriculationNumber {
     // the 8-digit integer
     private Integer number;
-
-    // the student this immatriculation number belongs to
-    @OneToOne
-    private Student student;
 
     /**
      * Factory method to create an immatriculation number from its components.

@@ -1,4 +1,4 @@
-package thkoeln.archilab.st2.a1;
+package thkoeln.archilab.st2.a1.Customer.domain;
 
 import jakarta.persistence.Converter;
 import thkoeln.archilab.st2.GenericIdConverter;

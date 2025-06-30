@@ -2,8 +2,7 @@ package thkoeln.archilab.st2.a3.student.application;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import thkoeln.archilab.st2.a3.course.application.CourseService;
-import thkoeln.archilab.st2.a3.course.domain.Course;
+import thkoeln.archilab.st2.a3.student.domain.Courseable;
 import thkoeln.archilab.st2.a3.student.domain.Student;
 import thkoeln.archilab.st2.a3.student.domain.StudentId;
 import thkoeln.archilab.st2.a3.student.domain.StudentRepository;
@@ -13,12 +12,15 @@ import java.util.List;
 @Service
 public class StudentService {
     private StudentRepository studentRepository;
-    private CourseService courseService;
+    private CourseableServiceInterface courseableServiceInterface;
 
     @Autowired
-    public StudentService( StudentRepository studentRepository, CourseService courseService ) {
+    public StudentService(
+            StudentRepository studentRepository,
+            CourseableServiceInterface courseableServiceInterface
+    ) {
+        this.courseableServiceInterface = courseableServiceInterface;
         this.studentRepository = studentRepository;
-        this.courseService = courseService;
     }
 
     public Student addStudent( Student student) {
@@ -45,9 +47,9 @@ public class StudentService {
 
     public Integer ectsLoadForStudent( StudentId studentId ) {
         if ( studentId == null ) throw new IllegalArgumentException( "StudentId is null" );
-        List<Course> courses = courseService.coursesForStudent( studentId );
+        List<Courseable> courses = courseableServiceInterface.coursesForStudent( studentId );
         Integer ects = 0;
-        for ( Course course : courses )
+        for ( Courseable course : courses )
             ects += course.getEcts();
         return ects;
     }

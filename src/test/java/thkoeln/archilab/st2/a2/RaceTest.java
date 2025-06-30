@@ -8,6 +8,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import thkoeln.archilab.st2.a2.car.application.CarService;
 import thkoeln.archilab.st2.a2.car.domain.Car;
 import thkoeln.archilab.st2.a2.motorclub.application.MotorClubService;
+import thkoeln.archilab.st2.a2.race.application.RaceService;
 import thkoeln.archilab.st2.a2.race.domain.Race;
 
 import java.time.LocalDate;
@@ -26,6 +27,8 @@ public class RaceTest {
 
     Car bmw, audi, mercedes;
     Race nuerburgring, hockenheim, spa;
+    @Autowired
+    private RaceService raceService;
 
     @BeforeEach
     public void setUp() {
@@ -41,18 +44,18 @@ public class RaceTest {
         nuerburgring = new Race( "Nürburgring", LocalDate.of( 2024, 8, 12 ) );
         hockenheim = new Race( "Hockenheim", LocalDate.of( 2024, 9, 2 ) );
         spa = new Race( "Spa", LocalDate.of( 2024, 9, 23 ) );
-        nuerburgring = motorClubService.addRace( nuerburgring );
-        hockenheim = motorClubService.addRace( hockenheim );
-        spa = motorClubService.addRace( spa );
+        nuerburgring = raceService.addRace( nuerburgring );
+        hockenheim = raceService.addRace( hockenheim );
+        spa = raceService.addRace( spa );
     }
 
     @Test
     public void testRegisterCarForRace() {
         // given
-        motorClubService.registerCarForRace( bmw, nuerburgring );
-        motorClubService.registerCarForRace( audi, hockenheim );
-        motorClubService.registerCarForRace( mercedes, spa );
-        motorClubService.registerCarForRace( mercedes, nuerburgring );
+        carService.registerCarForRace( bmw, nuerburgring );
+        carService.registerCarForRace( audi, hockenheim );
+        carService.registerCarForRace( mercedes, spa );
+        carService.registerCarForRace( mercedes, nuerburgring );
 
         // when
         Car checkBmw = carService.findById( bmw.getId() );
@@ -60,23 +63,23 @@ public class RaceTest {
         Car checkMercedes = carService.findById( mercedes.getId() );
 
         // then
-        assertTrue( checkBmw.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( nuerburgring.getId() ) );
-        assertFalse( checkBmw.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( hockenheim.getId() ) );
-        assertTrue( checkAudi.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( hockenheim.getId() ) );
-        assertFalse( checkAudi.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( nuerburgring.getId() ) );
-        assertTrue( checkMercedes.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( spa.getId() ) );
-        assertTrue( checkMercedes.getTheRacesInWhichThisCarHasParticipatedOrWillParticipateInTheFuture().contains( nuerburgring.getId() ) );
+        assertTrue( checkBmw.getRaces().contains( nuerburgring.getId() ) );
+        assertFalse( checkBmw.getRaces().contains( hockenheim.getId() ) );
+        assertTrue( checkAudi.getRaces().contains( hockenheim.getId() ) );
+        assertFalse( checkAudi.getRaces().contains( nuerburgring.getId() ) );
+        assertTrue( checkMercedes.getRaces().contains( spa.getId() ) );
+        assertTrue( checkMercedes.getRaces().contains( nuerburgring.getId() ) );
     }
 
     @Test
     public void testDontRegisterCarForRaceTwice() {
         // given
-        motorClubService.registerCarForRace( bmw, nuerburgring );
+        carService.registerCarForRace( bmw, nuerburgring );
 
         // when
         // then
         assertThrows( IllegalArgumentException.class,
-                () -> { motorClubService.registerCarForRace( bmw, nuerburgring ); } );
+                () -> { carService.registerCarForRace( bmw, nuerburgring ); } );
     }
 
 }

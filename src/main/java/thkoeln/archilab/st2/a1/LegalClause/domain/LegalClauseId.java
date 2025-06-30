@@ -1,4 +1,4 @@
-package thkoeln.archilab.st2.a1;
+package thkoeln.archilab.st2.a1.LegalClause.domain;
 
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;

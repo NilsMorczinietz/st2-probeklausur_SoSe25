@@ -1,4 +1,4 @@
-package thkoeln.archilab.st2.a1;
+package thkoeln.archilab.st2.a1.Customer.domain;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -11,7 +11,7 @@ import lombok.Setter;
  */
 @Entity
 @Getter @Setter
-public class CustomerEntity {
+public class Customer {
     @EmbeddedId
     @Setter(AccessLevel.PRIVATE)    // only for JPA
     private CustomerId id;
@@ -19,7 +19,7 @@ public class CustomerEntity {
     private String name;
     // ... we skip the other properties
 
-    public CustomerEntity() {
+    public Customer() {
         this.id = new CustomerId();
     }
 

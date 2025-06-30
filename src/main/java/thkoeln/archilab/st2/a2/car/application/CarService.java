@@ -5,8 +5,7 @@ import org.springframework.stereotype.Service;
 import thkoeln.archilab.st2.a2.car.domain.Car;
 import thkoeln.archilab.st2.a2.car.domain.CarId;
 import thkoeln.archilab.st2.a2.car.domain.CarRepository;
-
-import java.util.UUID;
+import thkoeln.archilab.st2.a2.race.domain.Race;
 
 @Service
 public class CarService {
@@ -27,9 +26,13 @@ public class CarService {
         return carRepository.findById( id ).orElseThrow( () -> new IllegalArgumentException( "Car not found" ) );
     }
 
-    public String carToString( Car car ) {
-        String printString = "Car " + car.getB() + " " + car.getT()
-                + " (" + car.getRegistrationNumber() + ")";
-        return printString;
+    public void registerCarForRace( Car car, Race race ) {
+        if ( car == null ) throw new IllegalArgumentException( "Car must not be null" );
+        if ( race == null ) throw new IllegalArgumentException( "Race must not be null" );
+
+        if( car.getRaces().contains( race.getId() ) )
+            throw new IllegalArgumentException( "Car is already registered" );
+        car.getRaces().add( race.getId() );
+        carRepository.save( car );
     }
 }

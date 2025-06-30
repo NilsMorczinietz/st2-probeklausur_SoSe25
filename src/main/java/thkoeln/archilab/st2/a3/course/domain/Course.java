@@ -2,6 +2,7 @@ package thkoeln.archilab.st2.a3.course.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import thkoeln.archilab.st2.a3.student.domain.Courseable;
 import thkoeln.archilab.st2.a3.student.domain.Student;
 import thkoeln.archilab.st2.a3.student.domain.StudentId;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @Getter @Setter
 @NoArgsConstructor( access = AccessLevel.PROTECTED )
 @EqualsAndHashCode( of = {"id"} )
-public class Course {
+public class Course extends Courseable {
     @EmbeddedId
     @Setter(AccessLevel.PRIVATE)    // only for JPA
     private CourseId id;
