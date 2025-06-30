@@ -27,4 +27,9 @@ public abstract class GenericId implements Serializable {
     protected GenericId( UUID id ) {
         this.id = id;
     }
+
+    @Override
+    public String toString(){
+        return this.id.toString();
+    }
 }

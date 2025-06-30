@@ -3,54 +3,60 @@
   - HTTPVerb: GET
   - ReturnCodeSuccess: 200
   - ReturnCodeFailure:
-    - 404: wenn doctor-id nicht im System existiert
-    - 409:
-    - 422:
+      - 404: wenn doctor-id nicht im System existiert
+      - 409:
+      - 422:
+
 2. Spezialisierung (`specialization`) eines `Doctor` ändern:
   - URI: /doctors/{doctor-id}
   - HTTPVerb: PATCH
   - ReturnCodeSuccess: 200
   - ReturnCodeFailure:
-    - 404: wenn doctor-id nicht im System existiert
-    - 409:
-    - 422: wenn das DTO leer ist, oder das specialization-Property einen leeren String enthält
+      - 404: wenn doctor-id nicht im System existiert
+      - 409:
+      - 422: wenn das DTO leer ist, oder das specialization-Property einen leeren String enthält
+
 3. `Doctor` neu anlegen:
-  - URI:
-  - HTTPVerb:
-  - ReturnCodeSuccess:
+  - URI: /doctors
+  - HTTPVerb: POST
+  - ReturnCodeSuccess: 201
   - ReturnCodeFailure:
-    - 404:
-    - 409:
-    - 422:
+      - 404:
+      - 409: Verstoß gegen Geschäftsregel-Doctor ohne Spezifikation
+      - 422: Werte die Spezifikation oder Name wurden nicht übergeben
+
 4. `AppointmentSlot` für einen `Doctor` hinzufügen:
-  - URI:
-  - HTTPVerb:
-  - ReturnCodeSuccess:
+  - URI: /doctors/{doctor-id}/appointmentSlots
+  - HTTPVerb: POST
+  - ReturnCodeSuccess: 201
   - ReturnCodeFailure:
-    - 404:
-    - 409:
-    - 422:
+      - 404: doctor-id existiert nichit
+      - 409: verstoß gegen Geschäftsregel (z.B. übergebener Slot existiert schon)
+      - 422: Werte zum AppointmentSlot fehlen, wie bspw. date oder hour
+
 5. Einen bestimmten `AppointmentSlot` eines `Doctors` für einen Patienten buchen:
-  - URI:
-  - HTTPVerb:
-  - ReturnCodeSuccess:
+  - URI: /doctors/{doctor-id}/appointmentSlot
+  - HTTPVerb: PATCH
+  - ReturnCodeSuccess: 200
   - ReturnCodeFailure:
-    - 404:
-    - 409:
-    - 422:
+      - 404: doctor-id existiert nicht
+      - 409: verstoß gegen geshcäftsregel (bspw. Slot ist schon gebucht (hat schon patientName))
+      - 422: patientName fehlt im Patch
+
 6. Alle freien `AppointmentSlots` für einen `Doctor` abfragen:
-  - URI:
-  - HTTPVerb:
-  - ReturnCodeSuccess:
+  - URI: /doctors/{doctor-id}/appointmentSlots?patientName=undefined
+  - HTTPVerb: GET
+  - ReturnCodeSuccess: 200
   - ReturnCodeFailure:
-    - 404:
-    - 409:
-    - 422:
+      - 404: doctor-id existiert nicht
+      - 409:
+      - 422:
+
 7. Alle (sowohl freie wie gebuchte) `AppointmentSlots` für einen `Doctor` stornieren und aus dem System herausnehmen:
-  - URI:
-  - HTTPVerb:
-  - ReturnCodeSuccess:
+  - URI: /doctors/{doctor-id}/appointmentSlots
+  - HTTPVerb: DELETE
+  - ReturnCodeSuccess: 200
   - ReturnCodeFailure:
-    - 404:
-    - 409:
-    - 422:
+      - 404: doctor-id existiert nicht
+      - 409:
+      - 422:

@@ -1,18 +1,17 @@
 package thkoeln.archilab.st2.a7.domain;
 
 
-import jakarta.persistence.*;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import thkoeln.archilab.st2.a6.doctor.domain.AppointmentSlot;
-import thkoeln.archilab.st2.a6.doctor.domain.DoctorId;
-import thkoeln.archilab.st2.a6.doctor.domain.exceptions.DoctorCreateException;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 
 @Entity
@@ -37,4 +36,12 @@ public class Shipment {
         this.withinEU = withinEU;
     }
 
+    public Float calculatePrice(){
+        float costs = 0;
+        for(Container container : containers){
+            costs += container.calculatePrice();
+        }
+        if(!this.withinEU) costs += 500;
+        return costs;
+    }
 }
