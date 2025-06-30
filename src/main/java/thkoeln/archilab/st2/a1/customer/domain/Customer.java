@@ -1,4 +1,4 @@
-package thkoeln.archilab.st2.a1.Customer.domain;
+package thkoeln.archilab.st2.a1.customer.domain;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;

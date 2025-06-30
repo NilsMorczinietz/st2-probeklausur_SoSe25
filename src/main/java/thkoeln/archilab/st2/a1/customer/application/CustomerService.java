@@ -1,9 +1,9 @@
-package thkoeln.archilab.st2.a1.Customer.application;
+package thkoeln.archilab.st2.a1.customer.application;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import thkoeln.archilab.st2.a1.Customer.domain.CustomerRepository;
-import thkoeln.archilab.st2.a1.Customer.domain.Customer;
+import thkoeln.archilab.st2.a1.customer.domain.CustomerRepository;
+import thkoeln.archilab.st2.a1.customer.domain.Customer;
 
 /**
  * Service class to manage all our customers

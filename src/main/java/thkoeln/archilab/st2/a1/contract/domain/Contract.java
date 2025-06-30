@@ -1,12 +1,10 @@
-package thkoeln.archilab.st2.a1.Contract.domain;
+package thkoeln.archilab.st2.a1.contract.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
-import thkoeln.archilab.st2.a1.domainprimitives.ContractReferenceKeyType;
-import thkoeln.archilab.st2.a1.Customer.domain.CustomerId;
-import thkoeln.archilab.st2.a1.LegalClause.domain.LegalClause;
+import thkoeln.archilab.st2.a1.customer.domain.CustomerId;
 
 import java.util.List;
 
@@ -20,7 +18,7 @@ import java.util.List;
 public class Contract {
     @EmbeddedId
     @Setter(AccessLevel.PRIVATE)    // only for JPA
-    private ContractReferenceKeyType id;
+    private ContractId id;
 
     private String title;
     private String purpose;

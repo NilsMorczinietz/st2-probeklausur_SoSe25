@@ -1,4 +1,4 @@
-package thkoeln.archilab.st2.a1.LegalClause.domain;
+package thkoeln.archilab.st2.a1.contract.domain;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.EmbeddedId;

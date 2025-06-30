@@ -1,4 +1,4 @@
-package thkoeln.archilab.st2.a1.domainprimitives;
+package thkoeln.archilab.st2.a1.contract.domain;
 
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
@@ -11,9 +11,9 @@ import java.util.UUID;
 
 @Embeddable
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AttributeOverride(name = "id", column = @Column(name = "contract_id"))
-public class ContractReferenceKeyType extends GenericId {
-    public ContractReferenceKeyType( UUID id ) {
+@AttributeOverride(name = "id", column = @Column(name = "legalclause_id"))
+public class LegalClauseId extends GenericId {
+    public LegalClauseId( UUID id ) {
         super( id );
     }
 }

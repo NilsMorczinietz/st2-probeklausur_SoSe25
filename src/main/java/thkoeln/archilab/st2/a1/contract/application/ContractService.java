@@ -1,10 +1,10 @@
-package thkoeln.archilab.st2.a1.Contract.application;
+package thkoeln.archilab.st2.a1.contract.application;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import thkoeln.archilab.st2.a1.Contract.domain.Contract;
-import thkoeln.archilab.st2.a1.Contract.domain.ContractRepository;
-import thkoeln.archilab.st2.a1.Customer.domain.CustomerId;
+import thkoeln.archilab.st2.a1.contract.domain.Contract;
+import thkoeln.archilab.st2.a1.contract.domain.ContractRepository;
+import thkoeln.archilab.st2.a1.customer.domain.CustomerId;
 
 import java.util.List;
 
