@@ -22,7 +22,7 @@
   - ReturnCodeSuccess: 201
   - ReturnCodeFailure:
       - 404: n.a.
-      - 409: Verstoß gegen Geschäftsregel-Doctor ohne valide Spezifikation
+      - 409: (Ggf. wenn kein zweiter Doktor mit dem gleichen Namen existieren darf)
       - 422: Wenn das DTO leer bzw. unvollständig ist (z.B. name fehlt ganz), name ist emptyString, specialization ist empty String (ggf. wenn specialization nicht in Menge der validen specializations)
 
 4. `AppointmentSlot` für einen `Doctor` hinzufügen:
