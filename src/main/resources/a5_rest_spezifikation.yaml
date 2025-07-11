@@ -35,7 +35,7 @@
       - 422: Werte zum AppointmentSlot fehlen, wie z.B. date oder hour. (z.B. übergebener Slot existiert schon, oder hour > 23)
 
 5. Einen bestimmten `AppointmentSlot` eines `Doctors` für einen Patienten buchen:
-  - URI: /doctors/{doctor-id}/appointmentSlot
+  - URI: /doctors/{doctor-id}/appointmentSlots/{appointmentSlot-id}
   - HTTPVerb: PATCH
   - ReturnCodeSuccess: 200
   - ReturnCodeFailure:
